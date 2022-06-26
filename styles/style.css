@@ -57,7 +57,7 @@ table {
 }
 .header__title {
   text-align: center;
-  padding: 1%;
+  padding: 10pt 0 25pt;
   margin: 1%;
   font-size: 56pt;
   border-bottom: 2pt solid #A29C9B;
@@ -84,7 +84,7 @@ table {
   text-align: center;
 }
 .footer .footer__author {
-  font-size: 24pt;
+  font-size: 21pt;
 }
 .footer__link {
   color: #F9DBBD;
