@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Кирилл Ковтун — создание чат-ботов, аналитика данных, управление цифровыми проектами</title>
+    <meta name="description" content="Создание чат-ботов в Telegram, аналитика цифровых данных, управление digital-проектами. Услуги от ИП Кирилла Ковтуна: от идеи до результата.">
+    <link rel="stylesheet" href="style.css"/>
+    <script src="script.js" defer></script>
+</head>
+<body>  <header class="header">
+    <div class="container header__container">
+      <div class="header__logo">Кирилл Ковтун</div>
+      <button class="burger-menu" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>      <nav class="nav">
+        <a href="#hero" style="--order: 1">Главная</a>
+        <a href="#about" style="--order: 2">Обо мне</a>
+        <a href="#services" style="--order: 3">Услуги</a>
+        <a href="#cases" style="--order: 4">Кейсы</a>
+        <a href="#contacts" class="btn btn--small" style="--order: 5">Связаться</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="hero" class="hero container">
+    <img src="images/avatar.jpg" alt="Моя фотография" class="hero__photo"/>
+    <h1 class="hero__title">
+    <span class="highlight green">ПРОЕКТНЫЙ МЕНЕДЖЕР</span>
+    <br>
+    <span class="highlight green">АНАЛИТИК ДАННЫХ</span>
+    <br>
+    <span class="highlight green">РАЗРАБОТЧИК</span>
+    </h1>
+    <p class="hero__subtitle">Помогаю бизнесу становиться эффективнее с помощью данных, автоматизации и технологий.</p>
+    <!-- <a href="#contacts" class="btn btn--center">Оставить заявку</a> -->
+  </section>
+  <section id="about" class="container">
+    <h2 class="section-title">Обо мне</h2>
+    <p class="about__text">
+      Более <span class="highlight green">5 лет опыта</span> в аналитике, автоматизации процессов и разработке чат-ботов. Работал с десятками клиентов из малого и среднего бизнеса, помогая им достигать <span class="highlight green">измеримых результатов</span>.
+    </p>    <div class="stats">
+      <div>
+        <span class="stat__value" data-count="5">0</span>
+        <div class="counter-label">лет опыта</div>
+      </div>
+      <div>
+        <span class="stat__value" data-count="25">0</span>
+        <div class="counter-label">проектов</div>
+      </div>
+    </div>
+    <ul class="stack__list">
+      <li>Python</li>
+      <li>Aiogram</li>
+      <li>Pandas</li>
+      <li>NumPy</li>
+      <li>SciPy</li>
+      <li>Matplotlib</li>
+      <li>Seaborn</li>
+      <li>Plotly</li>
+      <li>scikit-learn</li>
+      <li>Google Sheets API</li>
+      <li>CRM</li>
+      <li>CMS</li>
+    </ul>
+    <!-- <a href="#contacts" class="btn btn--center">Оставить заявку</a> -->
+  </section>
+
+  <section id="services" class="container">
+    <h2 class="section-title">Услуги</h2>
+    <div class="services__grid">
+      <div class="card">
+        <h3>Консультация</h3>
+        <p>Оценка задач, подбор решений и рекомендации</p>
+        <span class="price">от 500 ₽/час</span>
+        <button class="btn btn--small more-btn" data-info="Подробности о консультации">Подробнее</button>
+      </div>
+      <div class="card">
+        <h3>Ведение проекта</h3>
+        <p>Полное сопровождение ИТ-проекта: от идеи до релиза</p>
+        <span class="price">от 600 ₽/час</span>
+        <button class="btn btn--small more-btn" data-info="Детали по ведению проектов">Подробнее</button>
+      </div>
+      <div class="card">
+        <h3>Анализ данных</h3>
+        <p>Обработка, визуализация и выводы на основе данных</p>
+        <span class="price">от 1 000 ₽/час</span>
+        <button class="btn btn--small more-btn" data-info="Описание услуги анализа данных">Подробнее</button>
+      </div>
+      <div class="card">
+        <h3>Разработка</h3>
+        <p>Разработка Telegram-ботов и скриптов автоматизации</p>
+        <span class="price">от 800 ₽/час</span>
+        <button class="btn btn--small more-btn" data-info="Информация по разработке">Подробнее</button>
+      </div>
+    </div>
+    <!-- <a href="#contacts" class="btn btn--center">Оставить заявку</a> -->
+  </section>
+
+  <section id="cases" class="container">
+    <h2 class="section-title">Кейсы</h2>    <div class="filters">
+      <button class="filter active" data-type="all">Все</button>
+      <button class="filter" data-type="project">Ведение проектов</button>
+      <button class="filter" data-type="analysis">Анализ</button>
+      <button class="filter" data-type="dev">Разработка</button>
+    </div>
+    <div class="cases__carousel" id="caseContainer">
+      <div class="case" data-type="project">
+        <h3>Сайт для спортивно-гостиничного комплекса</h3>
+        <p>Разработка и ведение проекта корпоративного сайта для комплекса с интеграцией онлайн-бронирования.</p>
+        <button class="btn btn--small more-btn" data-case="case1">Подробнее</button>
+      </div>
+      <div class="case" data-type="analysis">
+        <h3>Анализ агрегатора посуточной сдачи недвижимости</h3>
+        <p>Исследование пользовательского поведения и эффективности рекламных кампаний для агрегатора.</p>
+        <button class="btn btn--small more-btn" data-case="case2">Подробнее</button>
+      </div>
+      <div class="case" data-type="dev">
+        <h3>Telegram-бот учета финансов</h3>
+        <p>Разработка бота для автоматизации учета личных и командных финансов.</p>
+        <button class="btn btn--small more-btn" data-case="case3">Подробнее</button>
+      </div>
+      <div class="case" data-type="analysis">
+        <h3>Анализ IT-вакансий</h3>
+        <p>Сбор и анализ данных по рынку труда в IT-сфере для HR-агентства.</p>
+        <button class="btn btn--small more-btn" data-case="case4">Подробнее</button>
+      </div>
+      <div class="case" data-type="dev">
+        <h3>Лендинг-портфолио</h3>
+        <p>Создание современного лендинга для презентации услуг и проектов.</p>
+        <button class="btn btn--small more-btn" data-case="case5">Подробнее</button>
+      </div>
+    </div>
+
+    <!-- Попапы услуг -->
+    <div class="popup" id="popup-service-consult">
+      <div class="popup__content">
+        <span class="popup__close">&times;</span>
+        <h3>Консультация</h3>
+        <p>Подробная оценка вашей задачи, подбор оптимальных решений, рекомендации по автоматизации и цифровизации бизнес-процессов. Помогаю разобраться в возможностях современных инструментов и выбрать лучший путь для вашего бизнеса.</p>
+        <div class="popup__price">от 500 ₽/час</div>
+      </div>
+    </div>
+    <div class="popup" id="popup-service-project">
+      <div class="popup__content">
+        <span class="popup__close">&times;</span>
+        <h3>Ведение проекта</h3>
+        <p>Полное сопровождение digital-проекта: от сбора требований и планирования до запуска и поддержки. Включает управление командой, контроль сроков и бюджета, регулярную отчетность и коммуникацию с заказчиком.</p>
+        <div class="popup__price">от 600 ₽/час</div>
+      </div>
+    </div>
+    <div class="popup" id="popup-service-analysis">
+      <div class="popup__content">
+        <span class="popup__close">&times;</span>
+        <h3>Анализ данных</h3>
+        <p>Сбор, обработка, визуализация и интерпретация данных для принятия обоснованных решений. Помогаю выявить скрытые закономерности, оптимизировать процессы и повысить эффективность бизнеса.</p>
+        <div class="popup__price">от 1 000 ₽/час</div>
+      </div>
+    </div>
+    <div class="popup" id="popup-service-dev">
+      <div class="popup__content">
+        <span class="popup__close">&times;</span>
+        <h3>Разработка</h3>
+        <p>Создание Telegram-ботов, автоматизация рутинных задач, интеграция с внешними сервисами. Гибкая настройка под ваши бизнес-процессы, поддержка и развитие решений.</p>
+        <div class="popup__price">от 800 ₽/час</div>
+      </div>
+    </div>
+
+    <!-- Попапы кейсов -->
+    <div class="popup" id="popup-case1">
+      <div class="popup__content">
+        <span class="popup__close">&times;</span>
+        <h3>Сайт для спортивно-гостиничного комплекса</h3>
+        <p><b>Описание:</b> Корпоративный сайт с каталогом услуг, онлайн-бронированием и личным кабинетом для гостей.</p>
+        <ul>
+          <li>Анализ требований и проектирование структуры</li>
+          <li>Дизайн и верстка</li>
+          <li>Интеграция с CRM и системой бронирования</li>
+          <li>Тестирование и запуск</li>
+        </ul>
+        <p><b>Результат:</b> Увеличение числа онлайн-бронирований на 40%, рост лояльности клиентов.</p>
+        <div class="popup__cta">Хотите такой же результат? <span class="highlight green">Свяжитесь со мной!</span></div>
+      </div>
+    </div>
+    <div class="popup" id="popup-case2">
+      <div class="popup__content">
+        <span class="popup__close">&times;</span>
+        <h3>Анализ агрегатора посуточной сдачи недвижимости</h3>
+        <p><b>Описание:</b> Анализ поведения пользователей и эффективности рекламы на платформе аренды квартир.</p>
+        <ul>
+          <li>Сбор данных из CRM и рекламных кабинетов</li>
+          <li>Построение воронки продаж</li>
+          <li>Визуализация ключевых метрик</li>
+          <li>Рекомендации по оптимизации</li>
+        </ul>
+        <p><b>Результат:</b> Снижение стоимости лида на 25%, рост конверсии сайта.</p>
+        <div class="popup__cta">Нужен глубокий анализ? <span class="highlight green">Обращайтесь!</span></div>
+      </div>
+    </div>
+    <div class="popup" id="popup-case3">
+      <div class="popup__content">
+        <span class="popup__close">&times;</span>
+        <h3>Telegram-бот учета финансов</h3>
+        <p><b>Описание:</b> Бот для учета личных и командных расходов с отчетами и напоминаниями.</p>
+        <ul>
+          <li>Разработка сценариев и логики</li>
+          <li>Интеграция с Google Sheets</li>
+          <li>Внедрение напоминаний и отчетов</li>
+          <li>Тестирование и поддержка</li>
+        </ul>
+        <p><b>Результат:</b> Экономия времени на ведение учета, прозрачность финансов для команды.</p>
+        <div class="popup__cta">Хотите автоматизировать финансы? <span class="highlight green">Пишите!</span></div>
+      </div>
+    </div>
+    <div class="popup" id="popup-case4">
+      <div class="popup__content">
+        <span class="popup__close">&times;</span>
+        <h3>Анализ IT-вакансий</h3>
+        <p><b>Описание:</b> Сбор и анализ вакансий с популярных площадок для HR-агентства.</p>
+        <ul>
+          <li>Парсинг данных с сайтов</li>
+          <li>Классификация и визуализация</li>
+          <li>Отчет по востребованным навыкам</li>
+          <li>Рекомендации для рекрутеров</li>
+        </ul>
+        <p><b>Результат:</b> Быстрый подбор релевантных кандидатов, повышение эффективности HR.</p>
+        <div class="popup__cta">Нужна аналитика рынка? <span class="highlight green">Свяжитесь!</span></div>
+      </div>
+    </div>
+    <div class="popup" id="popup-case5">
+      <div class="popup__content">
+        <span class="popup__close">&times;</span>
+        <h3>Лендинг-портфолио</h3>
+        <p><b>Описание:</b> Современный лендинг для презентации услуг и проектов специалиста.</p>
+        <ul>
+          <li>Дизайн и верстка</li>
+          <li>Адаптивная мобильная версия</li>
+          <li>SEO-оптимизация</li>
+          <li>Интеграция с формой обратной связи</li>
+        </ul>
+        <img src="images/case5.jpg" alt="Лендинг-портфолио" style="width:100%;border-radius:12px;margin:1rem 0;">
+        <p><b>Результат:</b> Рост числа обращений и повышение доверия к специалисту.</p>
+        <div class="popup__cta">Хотите такой лендинг? <span class="highlight green">Оставьте заявку!</span></div>
+      </div>
+    </div>
+  </section>  <footer id="contacts" class="container">
+    <h2 class="section-title">Контакты</h2>
+    <div class="footer__grid">
+      <div class="footer__col contact-info">
+        <p><a href="tel:+79934904280" class="contact-link">+7 993 490-42-80</a></p>
+        <p><a href="mailto:kovtun@headmaitre.ru" class="contact-link">kovtun@headmaitre.ru</a></p>
+        <div class="footer__icons">
+          <a href="https://t.me/solarmolly" target="_blank" rel="noopener" aria-label="Telegram"><img src="images/telegram.svg" alt="Telegram"/></a>
+          <a href="https://github.com/lunarmolly" target="_blank" rel="noopener" aria-label="GitHub"><img src="images/github.svg" alt="GitHub"/></a>
+        </div>
+      </div>
+      <div class="footer__col details-col">
+        <p>ИП Ковтун Кирилл Евгеньевич</p>
+        <p>ИНН: 280444043500</p>
+        <p>Расчётный счёт: 40802810420000650382</p>
+        <p>Название банка: ООО "Банк Точка"</p>
+        <p>БИК: 044525104</p>
+        <p>Корр. счёт: 30101810745374525104</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Счетчики
+    document.addEventListener('DOMContentLoaded', () => {      // Инициализация карточек кейсов для правильного отображения при загрузке
+      const cases = document.querySelectorAll('.case');
+      const activeFilter = document.querySelector('.filter.active');
+      const activeType = activeFilter ? activeFilter.getAttribute('data-type') : 'all';
+      
+      cases.forEach(card => {
+        // Применяем начальную фильтрацию в соответствии с активным фильтром
+        card.style.display = (activeType === 'all' || card.dataset.type === activeType) ? 'flex' : 'none';
+      });
+      
+      const counters = document.querySelectorAll('[data-count]');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const el = entry.target;
+            const target = +el.getAttribute('data-count');
+            let current = 0;
+            const increment = target / 100;
+      // Используем более плавную анимацию с замедлением
+      const duration = 2000; // 2 секунды
+      const startTime = Date.now();
+      
+      const interval = setInterval(() => {
+              const elapsed = Date.now() - startTime;
+              const progress = Math.min(elapsed / duration, 1);
+              
+              // Функция замедления (easeOutQuart)
+              const easeOut = 1 - Math.pow(1 - progress, 4);
+              current = target * easeOut;
+              
+              if (progress >= 1) {
+                el.textContent = target;
+                el.classList.add('highlight-complete');
+                clearInterval(interval);
+              } else {
+                el.textContent = Math.floor(current);
+              }
+            }, 16);
+            observer.unobserve(el);
+          }
+        });
+      });
+      counters.forEach(el => observer.observe(el));      // Фильтрация кейсов
+      const filters = document.querySelectorAll('.filter');
+      filters.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filters.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const type = btn.getAttribute('data-type');
+          cases.forEach(card => {
+            card.style.display = (type === 'all' || card.dataset.type === type) ? 'flex' : 'none';
+          });
+        });
+      });
+
+      // Попап
+      const popup = document.getElementById('popup');
+      const popupText = document.getElementById('popupText');
+      const popupClose = document.getElementById('popupClose');
+      const moreBtns = document.querySelectorAll('.more-btn');
+
+      moreBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          popupText.textContent = btn.dataset.info;
+          popup.classList.add('open');
+        });
+      });
+
+      popupClose.addEventListener('click', () => popup.classList.remove('open'));
+      popup.addEventListener('click', (e) => {
+        if (e.target === popup) popup.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
