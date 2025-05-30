@@ -2,9 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   const burgerMenu = document.querySelector('.burger-menu');
   const nav = document.querySelector('.nav');
-  const body = document.body;
-  
-  // Функция для переключения меню
+  const body = document.body;  // Функция для переключения меню
   function toggleMenu() {
     nav.classList.toggle('active');
     
@@ -168,6 +166,8 @@ serviceButtons.forEach(btn => {
     const popupId = servicePopups[title];
     if (popupId) {
       document.getElementById(popupId).classList.add('open');
+      // Принудительно ограничиваем изображения на мобильных
+      setTimeout(constrainPopupImages, 50);
     }
   });
 });
@@ -180,6 +180,8 @@ caseButtons.forEach(btn => {
     const caseKey = btn.getAttribute('data-case');
     if (caseKey && casePopups[caseKey]) {
       document.getElementById(casePopups[caseKey]).classList.add('open');
+      // Принудительно ограничиваем изображения на мобильных
+      setTimeout(constrainPopupImages, 50);
     }
   });
 });
@@ -194,11 +196,44 @@ allPopups.forEach(popup => {
   });
 });
 
-  // Инициализация всех функций
+  // Функция для принудительного ограничения изображений в попапах на мобильных
+function constrainPopupImages() {
+  if (window.innerWidth <= 600) {
+    const openPopup = document.querySelector('.popup.open');
+    if (openPopup) {
+      const images = openPopup.querySelectorAll('img');
+      images.forEach(img => {
+        // Удаляем любые inline стили
+        img.removeAttribute('style');
+        
+        // Принудительно устанавливаем класс и ограничения
+        img.classList.add('popup__image');
+        img.style.cssText = `
+          max-width: 50vw !important;
+          width: auto !important;
+          height: auto !important;
+          max-height: 80px !important;
+          margin: 0.5rem auto !important;
+          display: block !important;
+          object-fit: contain !important;
+          box-sizing: border-box !important;
+        `;
+      });
+    }
+  }
+}
+
+// Инициализация всех функций
   setupCasesFiltering();
   setupDetailButtons();
   
   // Запускаем выравнивание высоты карточек после загрузки страницы
   // Используем небольшую задержку для надежности
   setTimeout(equalizeCardHeights, 100);
+
+// Применяем ограничения для изображений в попапах
+constrainPopupImages();
+
+// Повторно применяем ограничения при изменении размера окна
+window.addEventListener('resize', constrainPopupImages);
 });

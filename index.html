@@ -8,7 +8,7 @@
     <script src="script.js" defer></script>
 </head>
 <body>  <header class="header">
-    <div class="container header__container">
+    <div class="header__container">
       <div class="header__logo">Кирилл Ковтун</div>
       <button class="burger-menu" aria-label="Открыть меню">
         <span></span>
@@ -105,10 +105,9 @@
       <button class="filter" data-type="analysis">Анализ</button>
       <button class="filter" data-type="dev">Разработка</button>
     </div>
-    <div class="cases__carousel" id="caseContainer">
-      <div class="case" data-type="project">
-        <h3>Сайт для спортивно-гостиничного комплекса</h3>
-        <p>Разработка и ведение проекта корпоративного сайта для комплекса с интеграцией онлайн-бронирования.</p>
+    <div class="cases__carousel" id="caseContainer">      <div class="case" data-type="project">
+        <h3>Сайт для спортивно-гостиничного комплекса «Возрождение»</h3>
+        <p>Создание первого официального сайта для комплекса с адаптивным дизайном и формой обратного звонка, интегрированной с Telegram.</p>
         <button class="btn btn--small more-btn" data-case="case1">Подробнее</button>
       </div>
       <div class="case" data-type="analysis">
@@ -167,20 +166,67 @@
       </div>
     </div>
 
-    <!-- Попапы кейсов -->
-    <div class="popup" id="popup-case1">
+    <!-- Попапы кейсов -->    <div class="popup" id="popup-case1">
       <div class="popup__content">
         <span class="popup__close">&times;</span>
-        <h3>Сайт для спортивно-гостиничного комплекса</h3>
-        <p><b>Описание:</b> Корпоративный сайт с каталогом услуг, онлайн-бронированием и личным кабинетом для гостей.</p>
+        <h2>Сайт для спортивно-гостиничного комплекса «Возрождение»</h2>
+        
+        <a href="https://vozrozhdenie-medyn.ru/" target="_blank" rel="noopener">
+          <img src="images/vozrozhdenie-screenshot.png" alt="Скриншот сайта Возрождение" class="popup__image">
+        </a>
+        
+        <h3>История проекта</h3>
+        <p>К нам обратился представитель спортивно-гостиничного комплекса «Возрождение» — уникальной площадки в городе Медынь, основанной при участии Сергея Петровича Новикова, первого советского чемпиона Олимпиады по дзюдо и основателя универсального боя.</p>
+        <p>Рекомендация пришла от другого нашего клиента, также связанного с универсальным боем. У комплекса не было сайта — вся связь с потенциальными клиентами шла по телефону. Главной задачей стало: создать первый официальный сайт, который бы представлял возможности комплекса, был адаптивен, прост и понятен для разных целевых аудиторий.</p>
+        
+        <h3>Клиент</h3>
+        <p>«Возрождение» — спортивно-гостиничный комплекс, сочетающий инфраструктуру для соревнований и тренировок с комфортным размещением. Здесь регулярно проходят сборы, турниры, мероприятия, а также культурные события. Комплекс соответствует ГОСТ Р 55529-2013 и может разместить до 150 человек.</p>
+        
+        <h3>Цели проекта</h3>
         <ul>
-          <li>Анализ требований и проектирование структуры</li>
-          <li>Дизайн и верстка</li>
-          <li>Интеграция с CRM и системой бронирования</li>
-          <li>Тестирование и запуск</li>
+          <li>Создать официальный сайт «с нуля», сделать информацию о комплексе общедоступной.</li>
+          <li>Сформировать единый стиль, визуально отразить надёжность и профессионализм.</li>
+          <li>Упростить подачу информации, позволить потенциальным клиентам удобно знакомиться с услугами.</li>
+          <li>Добавить возможность заказать обратный звонок.</li>
         </ul>
-        <p><b>Результат:</b> Увеличение числа онлайн-бронирований на 40%, рост лояльности клиентов.</p>
-        <div class="popup__cta">Хотите такой же результат? <span class="highlight green">Свяжитесь со мной!</span></div>
+        
+        <h3>Особенности проекта</h3>
+        <p>Клиент предпочитал, чтобы бронирование происходило по телефону — через прямой звонок в рецепцию. Мы предложили дополнительно внедрить форму обратного звонка, интегрированную с Telegram, чтобы упростить подачу заявок и не менять привычный порядок взаимодействия. Интеграция была выполнена бесплатно.</p>
+        <p>Кроме того, у клиента не было брендбука, предпочтений по дизайну и структуры сайта. Мы самостоятельно проанализировали рынок, выбрали несколько референсов и предложили лаконичную, визуально чистую концепцию. Заказчику сразу понравился предложенный макет.</p>
+        <p>Контент был также структурирован нашей командой: из сырой информации, которую прислал клиент, мы подготовили понятные блоки и распределили их по логике пользовательского пути.</p>
+        
+        <h3>Структура сайта</h3>
+        <ul>
+          <li>Главная страница: герой с описанием комплекса, основные преимущества.</li>
+          <li>Услуги: аренда залов, проживание, питание, организация мероприятий.</li>
+          <li>Номерной фонд: категории номеров с описанием и условиями проживания.</li>
+          <li>Галерея: визуальная демонстрация инфраструктуры.</li>
+          <li>Мероприятия: анонсы и архив прошедших событий.</li>
+          <li>Контакты: телефоны, email, карта, режим работы.</li>
+          <li>Юридическая информация: в подвале сайта.</li>
+        </ul>
+        
+        <h3>Результаты</h3>
+        <ul>
+          <li>Сайт стал первым полноценным цифровым представительством комплекса в интернете.</li>
+          <li>Благодаря простой структуре, все услуги представлены чётко, понятно и красиво.</li>
+          <li>Связь с администрацией стала доступна через форму заказа звонка.</li>
+          <li>Визуальная часть усилила имидж комплекса как серьёзной и современной площадки.</li>
+        </ul>
+        
+        <h3>Срок разработки</h3>
+        <p>2 месяца от получения ТЗ до релиза.</p>
+        
+        <h3>Команда проекта</h3>
+        <ul>
+          <li>Проектный менеджер: Ковтун Кирилл</li>
+          <li>Дизайнер: Шумиловских Влада</li>
+          <li>Верстка и интеграция на Tilda: Морин Никита</li>
+        </ul>
+        
+        <p>Клиент остался доволен результатом и выразил готовность вернуться к нам в будущем при расширении проекта.</p>
+        
+        <div class="popup__cta">Хотите такой же результат? <a href="#contacts" class="highlight green">Свяжитесь со мной!</a></div>
       </div>
     </div>
     <div class="popup" id="popup-case2">
@@ -195,7 +241,7 @@
           <li>Рекомендации по оптимизации</li>
         </ul>
         <p><b>Результат:</b> Снижение стоимости лида на 25%, рост конверсии сайта.</p>
-        <div class="popup__cta">Нужен глубокий анализ? <span class="highlight green">Обращайтесь!</span></div>
+        <div class="popup__cta">Нужен глубокий анализ? <a href="#contacts" class="highlight green">Обращайтесь!</a></div>
       </div>
     </div>
     <div class="popup" id="popup-case3">
@@ -210,7 +256,7 @@
           <li>Тестирование и поддержка</li>
         </ul>
         <p><b>Результат:</b> Экономия времени на ведение учета, прозрачность финансов для команды.</p>
-        <div class="popup__cta">Хотите автоматизировать финансы? <span class="highlight green">Пишите!</span></div>
+        <div class="popup__cta">Хотите автоматизировать финансы? <a href="#contacts" class="highlight green">Пишите!</a></div>
       </div>
     </div>
     <div class="popup" id="popup-case4">
@@ -225,7 +271,7 @@
           <li>Рекомендации для рекрутеров</li>
         </ul>
         <p><b>Результат:</b> Быстрый подбор релевантных кандидатов, повышение эффективности HR.</p>
-        <div class="popup__cta">Нужна аналитика рынка? <span class="highlight green">Свяжитесь!</span></div>
+        <div class="popup__cta">Нужна аналитика рынка? <a href="#contacts" class="highlight green">Свяжитесь!</a></div>
       </div>
     </div>
     <div class="popup" id="popup-case5">
@@ -239,29 +285,42 @@
           <li>SEO-оптимизация</li>
           <li>Интеграция с формой обратной связи</li>
         </ul>
-        <img src="images/case5.jpg" alt="Лендинг-портфолио" style="width:100%;border-radius:12px;margin:1rem 0;">
+        <img src="images/case5.jpg" alt="Лендинг-портфолио" class="popup__image">
         <p><b>Результат:</b> Рост числа обращений и повышение доверия к специалисту.</p>
-        <div class="popup__cta">Хотите такой лендинг? <span class="highlight green">Оставьте заявку!</span></div>
+        <div class="popup__cta">Хотите такой лендинг? <a href="#contacts" class="highlight green">Оставьте заявку!</a></div>
       </div>
     </div>
   </section>  <footer id="contacts" class="container">
     <h2 class="section-title">Контакты</h2>
+    
+    <div class="contact-cta">
+      <p class="contact-cta__text">Готовы обсудить ваш проект? Напишите мне в Telegram для быстрого ответа!</p>
+      <a href="https://t.me/solarmolly" target="_blank" class="contact-cta__button">
+        <img src="images/telegram.svg" alt="" class="contact-cta__icon"/>
+        Написать в Telegram
+      </a>
+    </div>
+
     <div class="footer__grid">
       <div class="footer__col contact-info">
-        <p><a href="tel:+79934904280" class="contact-link">+7 993 490-42-80</a></p>
-        <p><a href="mailto:kovtun@headmaitre.ru" class="contact-link">kovtun@headmaitre.ru</a></p>
-        <div class="footer__icons">
-          <a href="https://t.me/solarmolly" target="_blank" rel="noopener" aria-label="Telegram"><img src="images/telegram.svg" alt="Telegram"/></a>
-          <a href="https://github.com/lunarmolly" target="_blank" rel="noopener" aria-label="GitHub"><img src="images/github.svg" alt="GitHub"/></a>
+        <div class="contact-info__main">
+          <p><a href="tel:+79934904280" class="contact-link">+7 993 490-42-80</a></p>
+          <p><a href="mailto:kovtun@headmaitre.ru" class="contact-link">kovtun@headmaitre.ru</a></p>
+          <div class="footer__icons">
+            <a href="https://t.me/solarmolly" target="_blank" rel="noopener" aria-label="Telegram"><img src="images/telegram.svg" alt="Telegram"/></a>
+            <a href="https://github.com/lunarmolly" target="_blank" rel="noopener" aria-label="GitHub"><img src="images/github.svg" alt="GitHub"/></a>
+          </div>
         </div>
       </div>
       <div class="footer__col details-col">
-        <p>ИП Ковтун Кирилл Евгеньевич</p>
-        <p>ИНН: 280444043500</p>
-        <p>Расчётный счёт: 40802810420000650382</p>
-        <p>Название банка: ООО "Банк Точка"</p>
-        <p>БИК: 044525104</p>
-        <p>Корр. счёт: 30101810745374525104</p>
+        <div class="business-details">
+          <p>ИП Ковтун Кирилл Евгеньевич</p>
+          <p>ИНН: 280444043500</p>
+          <p>Расчётный счёт: 40802810420000650382</p>
+          <p>Название банка: ООО "Банк Точка"</p>
+          <p>БИК: 044525104</p>
+          <p>Корр. счёт: 30101810745374525104</p>
+        </div>
       </div>
     </div>
   </footer>
