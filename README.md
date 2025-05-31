@@ -1,129 +1,71 @@
-# Portfolio Website - Кирилл Ковтун
+# Kirill Kovtun - Portfolio Website
 
-## Описание
+A modern, responsive portfolio website for Kirill Kovtun, showcasing expertise in project management, data analytics, and software development.
 
-Адаптивный сайт-портфолио в стиле Fantasy/Steampunk, созданный с использованием Bootstrap 5. Сайт демонстрирует навыки проектного менеджера, аналитика данных и разработчика.
+## About
 
-## Особенности
+This is a personal portfolio website built with Bootstrap 5 and custom CSS, featuring a fantasy/steampunk aesthetic with dark color scheme and copper accents. The site presents professional services, case studies, and contact information in a clean, modern interface.
 
-- 🎨 **Стильный дизайн** в духе Fantasy/Steampunk
-- 📱 **Полная адаптивность** под все устройства
-- ⚡ **Быстрая загрузка** и оптимизированная производительность
-- 🎭 **Плавные анимации** и интерактивные элементы
-- 🔧 **Легкая кастомизация** и добавление нового контента
+## Features
 
-## Технологии
+- **Responsive Design**: Fully responsive layout that works on all devices
+- **Modern UI/UX**: Clean design with smooth animations and hover effects
+- **Case Studies**: Detailed project showcases with comprehensive descriptions
+- **Dynamic Navigation**: Sticky navigation with mobile-friendly hamburger menu
+- **Animated Statistics**: Counter animations for experience metrics
+- **Tech Stack Display**: Visual representation of technical skills
+- **Contact Integration**: Direct Telegram integration and complete contact details
+- **SEO Optimized**: Proper meta tags and semantic HTML structure
 
-- **HTML5** - семантическая структура
-- **CSS3** - стилизация с использованием CSS-переменных
-- **Bootstrap 5** - адаптивная сетка и компоненты
-- **JavaScript (ES6+)** - интерактивность и анимации
-- **Font Awesome** - иконки
-- **Google Fonts** - типографика (Inter)
+## Technologies Used
 
-## Структура проекта
+### Frontend
+- **HTML5**: Semantic markup with accessibility considerations
+- **CSS3**: Custom styling with Flexbox and Grid layouts
+- **Bootstrap 5**: Responsive framework for layout and components
+- **JavaScript**: Interactive functionality and animations
+- **Font Awesome**: Professional icon library
+- **Google Fonts**: Inter font family for modern typography
+
+### Hosting
+- **GitHub Pages**: Static site hosting with automatic deployment
+
+## Project Structure
 
 ```
-lunarmolly.github.io/
-├── index.html          # Основная страница
-├── style.css           # Пользовательские стили
-├── script.js           # JavaScript функциональность
-└── README.md           # Документация
+/
+├── index.html              # Main landing page
+├── style.css              # Custom CSS styles
+├── script.js              # JavaScript functionality
+├── README.md              # Project documentation
+├── cases/                 # Case study pages
+│   ├── case-portfolio.html
+│   ├── case-rental-analysis.html
+│   └── case-vozrozhdenie.html
+└── images/                # Static assets
+    ├── avatar.jpg
+    ├── rental_build_year.png
+    ├── rental_price_per_meter.png
+    ├── rental_top20metro.png
+    └── vozrozhdenie-main.jpg
 ```
 
-## Цветовая палитра
+## Design Features
 
-- `--bg-dark: #272727` - основной тёмный фон
-- `--gray-muted: #747474` - второстепенные подписи  
-- `--accent-orange: #FF652F` - акцент (CTA, кнопки)
-- `--accent-yellow: #FFE400` - выделение текста
-- `--accent-green: #14A76C` - дополнительные акценты
+### Color Palette
+- **Primary Dark**: #1a1a1a (main background)
+- **Secondary Dark**: #2a2a2a (cards and sections)
+- **Accent Green**: #4ade80 (primary accent)
+- **Accent Orange**: #f97316 (CTA buttons)
+- **Text Light**: #ffffff and #e5e5e5
 
-## Секции сайта
+### Typography
+- **Primary Font**: Inter (300-900 weights)
+- **Responsive sizing**: Fluid typography scaling
+- **Hierarchical structure**: Clear content hierarchy
 
-1. **Header** - навигация с адаптивным меню
-2. **Hero** - главный экран с презентацией
-3. **Обо мне** - опыт, статистика, стек технологий
-4. **Услуги** - карточки с описанием услуг
-5. **Кейсы** - портфолио с фильтрацией
-6. **Footer** - контакты и призыв к действию
-
-## Кастомизация
-
-### Изменение контента
-
-1. **Персональная информация**: редактируйте текст в соответствующих секциях `index.html`
-2. **Контакты**: обновите ссылки в footer секции
-3. **Изображения**: замените placeholder изображения на реальные фото
-
-### Добавление новых кейсов
-
-1. Добавьте новую карточку в секцию `#cases`:
-
-```html
-<div class="col-lg-4 col-md-6 mb-4 case-item" data-category="development">
-    <div class="case-card">
-        <div class="case-image">
-            <img src="path/to/image.jpg" alt="Проект" class="img-fluid">
-        </div>
-        <div class="case-content">
-            <h4 class="case-title">Название проекта</h4>
-            <p class="case-description">Краткое описание</p>
-            <button class="btn btn-outline-accent" data-bs-toggle="modal" data-bs-target="#caseModalN">
-                ПОДРОБНЕЕ
-            </button>
-        </div>
-    </div>
-</div>
-```
-
-2. Создайте соответствующий модал для детального описания
-
-### Изменение стилей
-
-Основные настройки находятся в CSS-переменных в начале файла `style.css`. Можно легко изменить:
-
-- Цветовую схему
-- Шрифты
-- Анимации
-- Отступы и размеры
-
-## Запуск локально
-
-1. Склонируйте репозиторий
-2. Откройте `index.html` в браузере
-3. Для разработки рекомендуется использовать локальный сервер (например, Live Server в VS Code)
-
-## Деплой на GitHub Pages
-
-1. Убедитесь, что основной файл называется `index.html`
-2. Перейдите в Settings репозитория
-3. В разделе Pages выберите источник: Deploy from a branch
-4. Выберите ветку `main` и папку `/ (root)`
-5. Сайт будет доступен по адресу: `https://username.github.io`
-
-## Оптимизация
-
-Сайт уже оптимизирован для:
-
-- ✅ Быстрой загрузки (минимум внешних зависимостей)
-- ✅ SEO (семантическая структура)
-- ✅ Доступности (ARIA-атрибуты, клавиатурная навигация)
-- ✅ Производительности (throttled scroll events)
-
-## Поддержка браузеров
-
-- Chrome 60+
-- Firefox 60+
-- Safari 12+
-- Edge 79+
-
-## Лицензия
-
-Данный проект создан для личного использования. При использовании кода, пожалуйста, укажите авторство.
-
----
-
-**Контакты для вопросов по коду:**
-- GitHub: [@lunarmolly](https://github.com/lunarmolly)
-- Email: your-email@example.com
+### Layout
+- **Container-based**: Bootstrap container system
+- **Grid Layout**: Responsive grid for content organization
+- **Card-based Design**: Consistent card components
+- **Sticky Navigation**: Fixed header with smooth scrolling
