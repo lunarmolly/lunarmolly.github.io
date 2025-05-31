@@ -327,7 +327,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .btn-accent-orange:hover {
-    background: transparent;
+    background: var(--bg-dark);
     color: var(--accent-orange);
     border-color: var(--accent-orange);
     transform: translateY(-2px);
@@ -876,6 +876,34 @@ section {
     color: var(--accent-orange);
     margin-bottom: 2rem;
     text-align: center;
+}
+
+/* Case Text Links - Only apply to regular text links, not buttons or CTAs */
+.case-content-section a:not(.btn):not(.cta-button),
+.case-text a:not(.btn):not(.cta-button),
+p a:not(.btn):not(.cta-button) {
+    color: var(--accent-orange);
+    text-decoration: none;
+    font-weight: 500;
+    border-bottom: 1px solid transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.case-content-section a:not(.btn):not(.cta-button):hover,
+.case-text a:not(.btn):not(.cta-button):hover,
+p a:not(.btn):not(.cta-button):hover {
+    color: var(--accent-yellow);
+    border-bottom-color: var(--accent-yellow);
+    text-decoration: none;
+}
+
+.case-content-section a:not(.btn):not(.cta-button):focus,
+.case-text a:not(.btn):not(.cta-button):focus,
+p a:not(.btn):not(.cta-button):focus {
+    outline: 2px solid var(--accent-orange);
+    outline-offset: 2px;
+    border-radius: 2px;
 }
 
 .result-card {
