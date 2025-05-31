@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: создание сайта для спортивно-гостиничного комплекса «Возрождение» - Кирилл Ковтун</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>    <!-- Header -->
+    <header class="header-main fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <span class="brand-text">KVTN</span>
+                </a>                
+                <button class="navbar-toggler" type="button" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#about">ОБО МНЕ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#services">УСЛУГИ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#cases">КЕЙСЫ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#contact">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+          <!-- Mobile Menu (Full Screen) -->
+        <div class="mobile-menu-fullscreen" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <h5 class="mobile-menu-title">МЕНЮ</h5>
+                <button type="button" class="mobile-menu-close" id="mobileMenuClose">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="mobile-menu-body">
+                <ul class="mobile-nav">
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html">ГЛАВНАЯ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#about">ОБО МНЕ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#services">УСЛУГИ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#cases">КЕЙСЫ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#contact">КОНТАКТЫ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>    </header>
+
+    <!-- Фиксированная кнопка "Назад к кейсам" -->
+    <a href="../index.html#cases" class="back-to-cases-fixed">
+        <i class="fas fa-arrow-left"></i>
+        <span>НАЗАД К КЕЙСАМ</span>
+    </a>
+
+    <!-- Case Hero Section -->
+    <section class="case-hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Скрытая кнопка для сохранения структуры -->
+                    <div style="visibility: hidden; height: 0; overflow: hidden;">
+                        <a href="../index.html#cases" class="btn btn-outline-accent">
+                            <i class="fas fa-arrow-left me-2"></i>
+                            НАЗАД К КЕЙСАМ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Content -->
+    <section class="case-content-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="case-main-title mb-4">Создание сайта для спортивно-гостиничного комплекса «Возрождение»</h1>
+                      <div class="case-image mb-5">
+                        <img src="../images/vozrozhdenie-main.jpg" alt="Главная страница сайта «Возрождение»" class="img-fluid rounded">
+                    </div>
+
+                    <div class="case-link mb-4">
+                        <a href="https://vozrozhdenie-medyn.ru/" target="_blank" class="btn btn-accent-orange">
+                            <i class="fas fa-external-link-alt me-2"></i>
+                            Перейти на сайт
+                        </a>
+                    </div>
+
+                    <h2 class="case-section-title">История проекта</h2>
+                    <p class="case-text">
+                        К нам обратился представитель спортивно-гостиничного комплекса «Возрождение» — уникальной площадки в городе Медынь, основанной при участии Сергея Петровича Новикова, первого советского чемпиона Олимпиады по дзюдо и основателя универсального боя.
+                    </p>
+                    <p class="case-text">
+                        Рекомендация пришла от другого нашего клиента, также связанного с универсальным боем. У комплекса не было сайта — вся связь с потенциальными клиентами шла по телефону. Главной задачей стало: создать первый официальный сайт, который бы представлял возможности комплекса, был адаптивен, прост и понятен для разных целевых аудиторий.
+                    </p>
+
+                    <h2 class="case-section-title">Клиент</h2>
+                    <p class="case-text">
+                        «Возрождение» — спортивно-гостиничный комплекс, сочетающий инфраструктуру для соревнований и тренировок с комфортным размещением. Здесь регулярно проходят сборы, турниры, мероприятия, а также культурные события. Комплекс соответствует ГОСТ Р 55529-2013 и может разместить до 150 человек.
+                    </p>
+
+                    <h2 class="case-section-title">Цели проекта</h2>
+                    <ul class="case-list">
+                        <li>Создать официальный сайт «с нуля», сделать информацию о комплексе общедоступной.</li>
+                        <li>Сформировать единый стиль, визуально отразить надёжность и профессионализм.</li>
+                        <li>Упростить подачу информации, позволить потенциальным клиентам удобно знакомиться с услугами.</li>
+                        <li>Добавить возможность заказать обратный звонок.</li>
+                    </ul>
+
+                    <h2 class="case-section-title">Особенности проекта</h2>
+                    <p class="case-text">
+                        Клиент предпочитал, чтобы бронирование происходило по телефону — через прямой звонок в рецепцию. Мы предложили дополнительно внедрить форму обратного звонка, интегрированную с Telegram, чтобы упростить подачу заявок и не менять привычный порядок взаимодействия. Интеграция была выполнена бесплатно.
+                    </p>
+                    <p class="case-text">
+                        Кроме того, у клиента не было брендбука, предпочтений по дизайну и структуры сайта. Мы самостоятельно проанализировали рынок, выбрали несколько референсов и предложили лаконичную, визуально чистую концепцию. Заказчику сразу понравился предложенный макет.
+                    </p>
+                    <p class="case-text">
+                        Контент был также структурирован нашей командой: из сырой информации, которую прислал клиент, мы подготовили понятные блоки и распределили их по логике пользовательского пути.
+                    </p>
+
+                    <h2 class="case-section-title">Структура сайта</h2>
+                    <ul class="case-list">
+                        <li>Главная страница: герой с описанием комплекса, основные преимущества.</li>
+                        <li>Услуги: аренда залов, проживание, питание, организация мероприятий.</li>
+                        <li>Номерной фонд: категории номеров с описанием и условиями проживания.</li>
+                        <li>Галерея: визуальная демонстрация инфраструктуры.</li>
+                        <li>Мероприятия: анонсы и архив прошедших событий.</li>
+                        <li>Контакты: телефоны, email, карта, режим работы.</li>
+                        <li>Юридическая информация: в подвале сайта.</li>
+                    </ul>
+
+                    <h2 class="case-section-title">Результаты</h2>
+                    <ul class="case-list">
+                        <li>Сайт стал первым полноценным цифровым представительством комплекса в интернете.</li>
+                        <li>Благодаря простой структуре, все услуги представлены чётко, понятно и красиво.</li>
+                        <li>Связь с администрацией стала доступна через форму заказа звонка.</li>
+                        <li>Визуальная часть усилила имидж комплекса как серьёзной и современной площадки.</li>
+                    </ul>
+
+                    <h2 class="case-section-title">Срок разработки</h2>
+                    <p class="case-text">
+                        2 месяца от получения ТЗ до релиза.
+                    </p>                    <h2 class="case-section-title">Команда проекта</h2>
+                    <ul class="case-list">
+                        <li>Проектный менеджер: Ковтун Кирилл</li>
+                        <li>Дизайнер: Шумиловских Влада</li>
+                        <li>Верстка и интеграция на Tilda: Морин Никита</li>
+                    </ul>
+                    
+                    <p class="case-text">
+                        Проект был реализован силами агентства <a href="https://impro.pro" target="_blank" class="text-accent-orange">IMPRO.pro</a> — современного агентства цифровых коммуникаций и маркетинговых разработок.
+                    </p>
+                    
+                    <!-- CTA -->
+                    <div class="case-cta text-center">
+                        <h3 class="cta-title">ЗАИНТЕРЕСОВАЛ ЭТОТ КЕЙС?</h3>
+                        <p class="cta-description">
+                            Обсудим ваш проект и найдем оптимальное решение для вашего бизнеса
+                        </p>
+                        <a href="../index.html#contact" class="btn btn-accent-orange btn-lg">
+                            СВЯЗАТЬСЯ СО МНОЙ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section><!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../script.js"></script>
+</body>
+</html>
