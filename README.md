@@ -30,26 +30,6 @@ This is a personal portfolio website built with Bootstrap 5 and custom CSS, feat
 ### Hosting
 - **GitHub Pages**: Static site hosting with automatic deployment
 
-## Project Structure
-
-```
-/
-├── index.html              # Main landing page
-├── style.css              # Custom CSS styles
-├── script.js              # JavaScript functionality
-├── README.md              # Project documentation
-├── cases/                 # Case study pages
-│   ├── case-portfolio.html
-│   ├── case-rental-analysis.html
-│   └── case-vozrozhdenie.html
-└── images/                # Static assets
-    ├── avatar.jpg
-    ├── rental_build_year.png
-    ├── rental_price_per_meter.png
-    ├── rental_top20metro.png
-    └── vozrozhdenie-main.jpg
-```
-
 ## Design Features
 
 ### Color Palette
