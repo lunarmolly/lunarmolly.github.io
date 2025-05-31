@@ -1,239 +1,381 @@
-// Управление меню-бургером
-document.addEventListener('DOMContentLoaded', () => {
-  const burgerMenu = document.querySelector('.burger-menu');
-  const nav = document.querySelector('.nav');
-  const body = document.body;  // Функция для переключения меню
-  function toggleMenu() {
-    nav.classList.toggle('active');
+// Wait for DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
     
-    // Добавляем/удаляем класс для анимации полосок бургера
-    burgerMenu.classList.toggle('active');
-    
-    // Блокируем прокрутку страницы при открытом меню
-    body.style.overflow = nav.classList.contains('active') ? 'hidden' : '';
-  }
-  
-  // Обработчик клика на бургер-меню
-  burgerMenu.addEventListener('click', toggleMenu);
-  
-  // Закрываем меню при клике на пункт меню
-  const navLinks = document.querySelectorAll('.nav a');
-  navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      // Проверяем, что мы на мобильном устройстве (бургер-меню видимо)
-      if (window.getComputedStyle(burgerMenu).display !== 'none') {
-        nav.classList.remove('active');
-        burgerMenu.classList.remove('active');
-        body.style.overflow = '';
-      }
+    // Smooth scrolling for navigation links
+    const navLinks = document.querySelectorAll('a[href^="#"]');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
-  });
-  
-  // Обработка изменения размера окна
-  window.addEventListener('resize', () => {
-    // Если ширина окна больше 768px, сбрасываем мобильное меню
-    if (window.innerWidth > 768) {
-      nav.classList.remove('active');
-      burgerMenu.classList.remove('active');
-      body.style.overflow = '';
+    
+    // Animated counter for statistics
+    function animateCounter(element, target, duration = 2000) {
+        let start = 0;
+        const increment = target / (duration / 16);
+        
+        function updateCounter() {
+            start += increment;
+            if (start < target) {
+                element.textContent = Math.floor(start);
+                requestAnimationFrame(updateCounter);
+            } else {
+                element.textContent = target;
+            }
+        }
+        
+        updateCounter();
     }
     
-    // Запускаем выравнивание карточек при изменении размера окна
-    equalizeCardHeights();
-  });
-    // Функция для выравнивания высоты карточек
-  function equalizeCardHeights() {
-    // Выравниваем высоту карточек услуг
-    const serviceCards = document.querySelectorAll('.services__grid .card');
-    if (serviceCards.length > 0) {
-      // Сбрасываем высоту перед измерением
-      serviceCards.forEach(card => card.style.height = '');
-      
-      // Находим максимальную высоту
-      let maxHeight = 0;
-      serviceCards.forEach(card => {
-        maxHeight = Math.max(maxHeight, card.offsetHeight);
-      });
-      
-      // Устанавливаем одинаковую высоту для всех карточек
-      serviceCards.forEach(card => card.style.height = maxHeight + 'px');
-    }
+    // Initialize counters when they come into view
+    const observerOptions = {
+        threshold: 0.5,
+        rootMargin: '0px 0px -100px 0px'
+    };
     
-    // Выравниваем высоту видимых кейсов
-    const visibleCases = document.querySelectorAll('.cases__carousel .case:not([style*="display: none"])');
-    if (visibleCases.length > 0) {
-      // Сбрасываем высоту перед измерением
-      visibleCases.forEach(card => card.style.height = '');
-      
-      // Находим максимальную высоту
-      let maxHeight = 0;
-      visibleCases.forEach(card => {
-        maxHeight = Math.max(maxHeight, card.offsetHeight);
-      });
-      
-      // Устанавливаем одинаковую высоту для всех видимых кейсов
-      visibleCases.forEach(card => card.style.height = maxHeight + 'px');
-    }
-      // Дополнительно убеждаемся, что контейнеры имеют правильные свойства
-    document.querySelectorAll('.services__grid, .cases__carousel').forEach(container => {
-      container.style.justifyContent = 'center';
-    });
-  }
-  
-  // Функция фильтрации кейсов
-  function setupCasesFiltering() {
-    const filterButtons = document.querySelectorAll('.filter');
-    const cases = document.querySelectorAll('.case');
+    const counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const target = parseInt(entry.target.getAttribute('data-target'));
+                animateCounter(entry.target, target);
+                counterObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe all stat numbers
+    const statNumbers = document.querySelectorAll('.stat-number');
+    statNumbers.forEach(stat => counterObserver.observe(stat));
+    
+    // Case filtering functionality
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const caseItems = document.querySelectorAll('.case-item');
     
     filterButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        // Убираем активный класс у всех кнопок
-        filterButtons.forEach(btn => btn.classList.remove('active'));
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            caseItems.forEach(item => {
+                if (filterValue === 'all') {
+                    item.style.display = 'block';
+                    item.classList.remove('hidden');
+                } else {
+                    const itemCategory = item.getAttribute('data-category');
+                    if (itemCategory === filterValue) {
+                        item.style.display = 'block';
+                        item.classList.remove('hidden');
+                    } else {
+                        item.style.display = 'none';
+                        item.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    });
+    
+    // Navbar background on scroll
+    const navbar = document.querySelector('.header-main');
+    let lastScrollTop = 0;
+    
+    window.addEventListener('scroll', function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
         
-        // Добавляем активный класс текущей кнопке
-        button.classList.add('active');
+        if (scrollTop > 100) {
+            navbar.style.background = 'rgba(39, 39, 39, 0.98)';
+            navbar.style.backdropFilter = 'blur(15px)';
+        } else {
+            navbar.style.background = 'rgba(39, 39, 39, 0.95)';
+            navbar.style.backdropFilter = 'blur(10px)';
+        }
         
-        // Получаем тип фильтра
-        const filterType = button.getAttribute('data-type');
-        
-        // Фильтруем кейсы
-        cases.forEach(caseCard => {
-          const caseType = caseCard.getAttribute('data-type');
-          
-          if (filterType === 'all' || filterType === caseType) {
-            caseCard.style.display = '';
-          } else {
-            caseCard.style.display = 'none';
-          }
+        lastScrollTop = scrollTop;
+    });
+    
+    // Add animation to elements when they come into view
+    const animateElements = document.querySelectorAll('.service-card, .case-card, .tech-item, .stat-card');
+    
+    const animationObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '0';
+                entry.target.style.transform = 'translateY(30px)';
+                entry.target.style.transition = 'all 0.6s ease';
+                
+                setTimeout(() => {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }, 100);
+                
+                animationObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px 0px -50px 0px'
+    });
+    
+    animateElements.forEach(element => {
+        animationObserver.observe(element);
+    });
+      // Tech stack items hover effect
+    const techItems = document.querySelectorAll('.tech-item');
+    techItems.forEach(item => {
+        item.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px) scale(1.05)';
         });
         
-        // Выравниваем высоту карточек после фильтрации
-        equalizeCardHeights();
-      });
-    });
-  }
-  
-  // Настраиваем открытие попапа с подробностями
-  function setupDetailButtons() {
-    const detailButtons = document.querySelectorAll('.more-btn');
-    const popup = document.getElementById('popup');
-    const popupText = document.getElementById('popupText');
-    const popupClose = document.getElementById('popupClose');
-    
-    detailButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const info = button.getAttribute('data-info');
-        popupText.textContent = info;
-        popup.classList.add('open');
-      });
+        item.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+        });
     });
     
-    popupClose.addEventListener('click', () => {
-      popup.classList.remove('open');
+    // Button click animations
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            const ripple = document.createElement('span');
+            const rect = this.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+            
+            this.appendChild(ripple);
+            
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
     });
     
-    // Закрытие при клике на фон
-    popup.addEventListener('click', (e) => {
-      if (e.target === popup) {
-        popup.classList.remove('open');
-      }
-    });
-  }
-  
-  // Попапы услуг и кейсов
-const servicePopups = {
-  'Консультация': 'popup-service-consult',
-  'Ведение проекта': 'popup-service-project',
-  'Анализ данных': 'popup-service-analysis',
-  'Разработка': 'popup-service-dev',
-};
-
-const casePopups = {
-  'case1': 'popup-case1',
-  'case2': 'popup-case2',
-  'case3': 'popup-case3',
-  'case4': 'popup-case4',
-  'case5': 'popup-case5',
-};
-
-// Открытие попапа услуги
-const serviceButtons = document.querySelectorAll('.services__grid .card .btn');
-serviceButtons.forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const card = btn.closest('.card');
-    const title = card.querySelector('h3').textContent.trim();
-    const popupId = servicePopups[title];
-    if (popupId) {
-      document.getElementById(popupId).classList.add('open');
-      // Принудительно ограничиваем изображения на мобильных
-      setTimeout(constrainPopupImages, 50);
-    }
-  });
-});
-
-// Открытие попапа кейса
-const caseButtons = document.querySelectorAll('.cases__carousel .case .btn');
-caseButtons.forEach(btn => {
-  btn.addEventListener('click', (e) => {
-    e.preventDefault();
-    const caseKey = btn.getAttribute('data-case');
-    if (caseKey && casePopups[caseKey]) {
-      document.getElementById(casePopups[caseKey]).classList.add('open');
-      // Принудительно ограничиваем изображения на мобильных
-      setTimeout(constrainPopupImages, 50);
-    }
-  });
-});
-
-// Универсальное закрытие попапов
-const allPopups = document.querySelectorAll('.popup');
-allPopups.forEach(popup => {
-  popup.addEventListener('click', (e) => {
-    if (e.target.classList.contains('popup') || e.target.classList.contains('popup__close')) {
-      popup.classList.remove('open');
-    }
-  });
-});
-
-  // Функция для принудительного ограничения изображений в попапах на мобильных
-function constrainPopupImages() {
-  if (window.innerWidth <= 600) {
-    const openPopup = document.querySelector('.popup.open');
-    if (openPopup) {
-      const images = openPopup.querySelectorAll('img');
-      images.forEach(img => {
-        // Удаляем любые inline стили
-        img.removeAttribute('style');
+    // Add CSS for ripple effect
+    const style = document.createElement('style');
+    style.textContent = `
+        .btn {
+            position: relative;
+            overflow: hidden;
+        }
         
-        // Принудительно устанавливаем класс и ограничения
-        img.classList.add('popup__image');
-        img.style.cssText = `
-          max-width: 50vw !important;
-          width: auto !important;
-          height: auto !important;
-          max-height: 80px !important;
-          margin: 0.5rem auto !important;
-          display: block !important;
-          object-fit: contain !important;
-          box-sizing: border-box !important;
-        `;
-      });
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(0);
+            animation: ripple-animation 0.6s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple-animation {
+            to {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+    
+    // Form validation and interaction (if forms are added later)
+    const forms = document.querySelectorAll('form');
+    forms.forEach(form => {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Add form handling logic here
+            console.log('Form submitted');
+        });
+    });
+    
+    // Preloader (optional)
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        window.addEventListener('load', function() {
+            preloader.style.opacity = '0';
+            setTimeout(() => {
+                preloader.style.display = 'none';
+            }, 500);
+        });
     }
-  }
+      // Mobile Menu Functionality
+    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const mobileMenuClose = document.getElementById('mobileMenuClose');
+    const mobileMenuLinks = document.querySelectorAll('.mobile-nav-link');
+    
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+        mobileMenu.classList.toggle('active');
+        mobileMenuToggle.classList.toggle('collapsed');
+        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    }
+    
+    // Close mobile menu
+    function closeMobileMenu() {
+        mobileMenu.classList.remove('active');
+        mobileMenuToggle.classList.remove('collapsed');
+        document.body.style.overflow = '';
+    }
+    
+    // Event listeners
+    if (mobileMenuToggle) {
+        mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+    }
+    
+    if (mobileMenuClose) {
+        mobileMenuClose.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Close menu when clicking on a link
+    mobileMenuLinks.forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+    });
+    
+    // Close menu when clicking outside
+    mobileMenu.addEventListener('click', function(e) {
+        if (e.target === mobileMenu) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+            closeMobileMenu();
+        }
+    });
+    
+    // Keyboard navigation support
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            // Close any open modals
+            const modals = document.querySelectorAll('.modal.show');
+            modals.forEach(modal => {
+                const modalInstance = bootstrap.Modal.getInstance(modal);
+                if (modalInstance) {
+                    modalInstance.hide();
+                }
+            });
+            
+            // Close mobile menu
+            const offcanvas = document.querySelector('.offcanvas.show');
+            if (offcanvas) {
+                const offcanvasInstance = bootstrap.Offcanvas.getInstance(offcanvas);
+                if (offcanvasInstance) {
+                    offcanvasInstance.hide();
+                }
+            }
+        }
+    });
+    
+    // Performance optimization: throttle scroll events
+    function throttle(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+      // Apply throttling to scroll events
+    const throttledScrollHandler = throttle(function() {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        // Update navbar background
+        if (scrollTop > 100) {
+            navbar.style.background = 'rgba(39, 39, 39, 0.98)';
+        } else {
+            navbar.style.background = 'rgba(39, 39, 39, 0.95)';
+        }
+    }, 16);
+    
+    window.addEventListener('scroll', throttledScrollHandler);
+    
+    // Add loading class to body and remove after everything is loaded
+    document.body.classList.add('loading');
+    
+    window.addEventListener('load', function() {
+        setTimeout(() => {
+            document.body.classList.remove('loading');
+            document.body.classList.add('loaded');
+        }, 100);
+    });    // Phone copy functionality
+    const phoneElement = document.querySelector('.phone-copy');
+    
+    if (phoneElement) {
+        phoneElement.addEventListener('click', function() {
+            const phoneNumber = this.getAttribute('data-phone');
+            
+            // Copy to clipboard
+            navigator.clipboard.writeText(phoneNumber).then(function() {
+                // Show success feedback via CSS class
+                phoneElement.classList.add('copied');
+                
+                // Reset after 2 seconds
+                setTimeout(() => {
+                    phoneElement.classList.remove('copied');
+                }, 2000);
+            }).catch(function(err) {
+                console.error('Ошибка копирования: ', err);
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = phoneNumber;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                
+                // Show feedback via CSS class
+                phoneElement.classList.add('copied');
+                
+                setTimeout(() => {
+                    phoneElement.classList.remove('copied');
+                }, 2000);
+            });
+        });
+    }
+
+    // Console easter egg
+    console.log(`
+    ╔══════════════════════════════════════╗
+    ║     🚀 КИРИЛЛ КОВТУН PORTFOLIO       ║
+    ║                                      ║
+    ║  Проектный менеджер | Аналитик       ║
+    ║  данных | Разработчик                ║
+    ║                                      ║
+    ║  Хотите обсудить проект?             ║
+    ║  Напишите в Telegram!                ║
+    ╚══════════════════════════════════════╝
+    `);
+});
+
+// Additional utility functions
+function isMobile() {
+    return window.innerWidth <= 768;
 }
 
-// Инициализация всех функций
-  setupCasesFiltering();
-  setupDetailButtons();
-  
-  // Запускаем выравнивание высоты карточек после загрузки страницы
-  // Используем небольшую задержку для надежности
-  setTimeout(equalizeCardHeights, 100);
+function isTablet() {
+    return window.innerWidth > 768 && window.innerWidth <= 1024;
+}
 
-// Применяем ограничения для изображений в попапах
-constrainPopupImages();
-
-// Повторно применяем ограничения при изменении размера окна
-window.addEventListener('resize', constrainPopupImages);
-});
+function isDesktop() {
+    return window.innerWidth > 1024;
+}
