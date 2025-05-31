@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: анализ посуточной аренды квартир в Москве - Кирилл Ковтун</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-main fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <span class="brand-text">KVTN</span>
+                </a>                
+                <button class="navbar-toggler" type="button" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#about">ОБО МНЕ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#services">УСЛУГИ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#cases">КЕЙСЫ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#contact">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile Menu (Full Screen) -->
+        <div class="mobile-menu-fullscreen" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <h5 class="mobile-menu-title">МЕНЮ</h5>
+                <button type="button" class="mobile-menu-close" id="mobileMenuClose">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="mobile-menu-body">
+                <ul class="mobile-nav">
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html">ГЛАВНАЯ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#about">ОБО МНЕ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#services">УСЛУГИ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#cases">КЕЙСЫ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#contact">КОНТАКТЫ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Фиксированная кнопка "Назад к кейсам" -->
+    <a href="../index.html#cases" class="back-to-cases-fixed">
+        <i class="fas fa-arrow-left"></i>
+        <span>НАЗАД К КЕЙСАМ</span>
+    </a>
+
+    <!-- Case Hero Section -->
+    <section class="case-hero-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Скрытая кнопка для сохранения структуры -->
+                    <div style="visibility: hidden; height: 0; overflow: hidden;">
+                        <a href="../index.html#cases" class="btn btn-outline-accent">
+                            <i class="fas fa-arrow-left me-2"></i>
+                            НАЗАД К КЕЙСАМ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Content -->
+    <section class="case-content-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="case-main-title mb-4">Анализ посуточной аренды квартир в Москве</h1>
+
+                    <h2 class="case-section-title">История проекта</h2>
+                    <p class="case-text">
+                        Ко мне обратился частный клиент, практикующий специалист в сфере недвижимости. Его интересовало, как именно формируется стоимость посуточной аренды в Москве: какие факторы реально влияют на цену, насколько рынок однороден и можно ли заранее распознать переоценённые или выгодные объекты.
+                    </p>
+                    <p class="case-text">
+                        Проект носил исследовательский характер — цель заключалась в формировании собственной системы оценки, основанной на данных, а не на догадках или рыночных стереотипах. Я предложил реализовать полный аналитический цикл: от автоматического сбора данных до создания дашборда, где можно самостоятельно исследовать закономерности и выявлять нетипичные случаи.
+                    </p>
+
+                    <h2 class="case-section-title">Цели проекта</h2>
+                    <ul class="case-list">
+                        <li>Получить актуальные данные с рынка аренды и подготовить их к анализу.</li>
+                        <li>Построить обогащённый датасет с производными признаками.</li>
+                        <li>Найти закономерности, влияющие на цену: от метро до типа отделки.</li>
+                        <li>Выявить аномальные и переоценённые объекты.</li>
+                        <li>Реализовать удобный дашборд, с которым может работать неаналитик.</li>
+                    </ul>
+
+                    <h2 class="case-section-title">Особенности реализации</h2>
+                    <p class="case-text">
+                        Проект потребовал комплексного подхода к работе с данными — от автоматизированного сбора до глубокого анализа:
+                    </p>
+                    <ul class="case-list">
+                        <li><strong>Сбор данных</strong>: использован selenium для парсинга <a href="https://realty.yandex.ru/moskva/snyat/kvartira/posutochno/" target="_blank">realty.yandex.ru</a> с имитацией действий пользователя. В каждом объявлении собирались как видимые данные, так и те, что раскрываются по кнопке.</li>
+                        <li><strong>Неструктурированные блоки</strong>: признаки извлекались из полутекстовых описаний (например, "Потолки — 3,2 м", "Дом 1987 года"). Применялись регулярные выражения и шаблонное сопоставление.</li>
+                        <li><strong>Расчёт новых признаков</strong>: вычислены параметры, которых не было в исходных данных — цена за м², плотность квартир, отношение жилой площади к общей и др.</li>
+                        <li><strong>Воспроизводимость</strong>: вся логика анализа реализована в report.ipynb, а дашборд построен на Streamlit. Клиент сможет самостоятельно обновлять данные и проводить анализ актуальной информации всего за несколько кликов мышкой благодаря удобной навигации и автоматизации процессов.</li>
+                    </ul>
+
+                    <h2 class="case-section-title">Структура проекта</h2>
+                    <ul class="case-list">
+                        <li><strong>parser.py</strong> — автоматический сбор объявлений.</li>
+                        <li><strong>clean_data.py</strong> — очистка, нормализация, извлечение признаков.</li>
+                        <li><strong>eda.py, analyze_distributions.py, analyze_price_factors.py, analyze_special_cases.py</strong> — логика анализа и визуализации.</li>
+                        <li><strong>report.ipynb</strong> — воспроизводимый анализ с графиками и таблицами.</li>
+                        <li><strong>dashboard.py</strong> — визуальный дашборд (Streamlit).</li>
+                    </ul>
+
+                    <h2 class="case-section-title">Результаты</h2>
+                    <p class="case-text">
+                        Проект показал, насколько мощным может быть даже базовый анализ данных при грамотной постановке задач. Было обработано более 1000 объектов. В результате:
+                    </p>
+
+                    <h3 class="case-subsection-title">1. Геолокация = основной драйвер цены</h3>
+                    <p class="case-text">
+                        Цены аренды тесно связаны с метро и улицей. В топе — <strong>Деловой центр</strong>, <strong>Пушкинская</strong>, <strong>Таганская</strong>, а также исторические локации типа <strong>Арбата</strong> и <strong>Котельнической набережной</strong>.
+                    </p>
+                    
+                    <div class="case-image-container my-4">
+                        <img src="../images/rental_top20metro.png" alt="Топ-20 станций метро по средней цене аренды" class="img-fluid rounded">
+                        <p class="case-image-caption">Топ-20 станций метро по средней цене аренды с аннотациями</p>
+                    </div>
+
+                    <h3 class="case-subsection-title">2. Связь цены и эпохи застройки</h3>
+                    <p class="case-text">
+                        чётко прослеживается тренд: старые дома (до 1960 г.) и новостройки 2000-х — самые дорогие. Самые дешёвые — панельные дома 1980-х годов. Это важно при массовой оценке и фильтрации объектов.
+                    </p>
+                    
+                    <div class="case-image-container my-4">
+                        <img src="../images/rental_build_year.png" alt="Средняя цена аренды по эпохам постройки" class="img-fluid rounded">
+                        <p class="case-image-caption">Средняя цена аренды по эпохам постройки с медианой и доверительными интервалами</p>
+                    </div>
+
+                    <h3 class="case-subsection-title">3. Цена за м² = лучший индикатор отклонений</h3>
+                    <p class="case-text">
+                        Анализ стоимости за квадратный метр помог выявить необычные объекты. Например, рекордная цена — 466 ₽/м² при площади 15 м² и цене 6990 ₽/сутки. Этот объект расположен рядом с метро Деловой центр, что могло повлиять на его стоимость. В среднем цена за метр составляет около 108 ₽/м², а медианная — 94 ₽/м².
+                    </p>
+                    
+                    <div class="case-image-container my-4">
+                        <img src="../images/rental_price_per_meter.png" alt="Распределение цены за квадратный метр" class="img-fluid rounded">
+                        <p class="case-image-caption">Распределение цены за м²</p>
+                    </div>
+
+                    <h3 class="case-subsection-title">4. Аномалии и выбросы</h3>
+                    <p class="case-text">
+                        Найдены лофты с потолками 4,5 м, квартиры с нереалистично высокой ценой при плохих характеристиках, случаи с некорректно заполненными карточками. Эти объекты были полезны клиенту как тревожные сигналы при ручном выборе или разработке фильтров.
+                    </p>
+
+                    <h3 class="case-subsection-title">5. Малозначимые признаки</h3>
+                    <p class="case-text">
+                        Корреляционный анализ показал, что такие признаки как этаж, количество подъездов или даже тип дома оказывают минимальное влияние. Это позволило клиенту сократить перечень фичей, которые он учитывал при экспертной оценке.
+                    </p>
+
+                    <h2 class="case-section-title">Используемые технологии</h2>
+                    <ul class="case-list">
+                        <li><strong>Python</strong>: pandas, matplotlib, seaborn, selenium, ast, regex</li>
+                        <li><strong>Jupyter Notebook</strong>: воспроизводимый анализ</li>
+                        <li><strong>Streamlit</strong>: дашборд с навигацией и графиками</li>
+                        <li><strong>Feature Engineering</strong>: ручное извлечение и создание производных признаков</li>
+                    </ul>
+
+                    <h2 class="case-section-title">Срок разработки</h2>
+                    <p class="case-text">
+                        Полный цикл занял около 1 недели:
+                    </p>
+
+                    <h2 class="case-section-title">Команда проекта</h2>
+                    <ul class="case-list">
+                        <li>Аналитик данных, разработчик: Ковтун Кирилл</li>
+                    </ul>
+
+                    <p class="case-text">
+                        Проект полностью реализован собственными силами с использованием современных инструментов анализа данных.
+                    </p>
+                    
+                    <!-- CTA -->
+                    <div class="case-cta text-center">
+                        <h3 class="cta-title">ЗАИНТЕРЕСОВАЛ ЭТОТ ПОДХОД?</h3>
+                        <p class="cta-description">
+                            Данные не лгут — если правильно с ними работать. Обсудим ваш проект с реальными выводами
+                        </p>
+                        <a href="../index.html#contact" class="btn btn-accent-orange btn-lg">
+                            СВЯЗАТЬСЯ СО МНОЙ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../script.js"></script>
+</body>
+</html>
