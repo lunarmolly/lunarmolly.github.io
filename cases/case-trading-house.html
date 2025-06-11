@@ -24,37 +24,108 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
+    <!-- Header -->
+    <header class="header-main fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <span class="brand-text">KVTN</span>
+                </a>
+                <button class="navbar-toggler" type="button" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#about">ОБО МНЕ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#services">УСЛУГИ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#cases">КЕЙСЫ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#contact">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile Menu (Full Screen) -->
+        <div class="mobile-menu-fullscreen" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <h5 class="mobile-menu-title">МЕНЮ</h5>
+                <button type="button" class="mobile-menu-close" id="mobileMenuClose">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <div class="mobile-menu-body">
+                <ul class="mobile-nav">
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html">ГЛАВНАЯ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#about">ОБО МНЕ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#services">УСЛУГИ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#cases">КЕЙСЫ</a>
+                    </li>
+                    <li class="mobile-nav-item">
+                        <a class="mobile-nav-link" href="../index.html#contact">КОНТАКТЫ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
     <!-- Fixed Back to Cases Button -->
     <a href="../index.html#cases" class="back-to-cases-fixed">
         <i class="fas fa-arrow-left"></i>
-        <span>Назад к кейсам</span>
-    </a>
-
-    <!-- Case Hero Section -->
+        <span>НАЗАД К КЕЙСАМ</span>
+    </a>    <!-- Case Hero Section -->
     <section class="case-hero">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <h1>Прототип игры "Торговый Дом"</h1>
-                    <p class="lead">
-                        Полнофункциональная торговая стратегия с античной тематикой, двойным интерфейсом и погружающей аудиосистемой
-                    </p>
+                <div class="col-12">
+                    <!-- Скрытая кнопка для сохранения структуры -->
+                    <div style="visibility: hidden; height: 0; overflow: hidden;">
+                        <a href="../index.html#cases" class="btn btn-outline-accent">
+                            <i class="fas fa-arrow-left me-2"></i>
+                            НАЗАД К КЕЙСАМ
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>    </section>
 
-    <!-- Game Screenshot -->
-    <section class="py-5" style="background: var(--bg-dark);">
+    <!-- Case Content -->
+    <section class="case-content-section">
         <div class="container">
             <div class="row">
-                <div class="col-lg-10 mx-auto text-center">                    
-                    <img src="../images/trading-house.JPG" 
-                         alt="Скриншот игры Торговый Дом - главное меню" 
-                         class="img-fluid rounded shadow-lg mb-3"
-                         style="border: 2px solid var(--accent-orange); box-shadow: 0 10px 30px rgba(255, 140, 0, 0.3) !important;">
-                    <p class="text-muted">
-                        <em>Главное меню игры "Торговый Дом" с античной стилизацией и музыкальными элементами управления</em>
-                    </p>
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="case-main-title">Прототип игры "Торговый Дом"</h1>
+                    
+                    <div class="case-image-container">
+                        <img src="../images/trading-house.JPG" 
+                             alt="Скриншот игры Торговый Дом - главное меню" 
+                             class="case-image">
+                        <p class="case-image-caption">
+                            ГЛАВНОЕ МЕНЮ ИГРЫ "ТОРГОВЫЙ ДОМ" С АНТИЧНОЙ СТИЛИЗАЦИЕЙ И МУЗЫКАЛЬНЫМИ ЭЛЕМЕНТАМИ УПРАВЛЕНИЯ
+                        </p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -78,10 +149,8 @@
                             а тематика Древнего Рима была выбрана из уважения к его историческому наследию. 
                             Особое внимание уделялось возможности выбора между современным графическим интерфейсом 
                             и классическим текстовым режимом.
-                        </p>
-                        <div class="mt-4">
-                            <a href="https://github.com/lunarmolly/trading-house-cli" target="_blank" class="btn btn-accent-orange">
-                                <i class="fab fa-github me-2"></i>
+                        </p>                        <div class="mt-4">
+                            <a href="https://github.com/lunarmolly/trading-house-cli" target="_blank" class="btn">
                                 ПОСМОТРЕТЬ КОД
                             </a>
                         </div>
@@ -119,33 +188,37 @@
                             Особое внимание уделено аудиосистеме: интегрирована фоновая музыка в тематике Древнего Рима 
                             с автоматическим воспроизведением, интеллектуальным перемешиванием плейлиста и полным набором 
                             элементов управления в GUI-версии.
-                        </p>                        <h4 class="mt-4 mb-3" style="color: var(--accent-green);">Ключевые технические решения:</h4>
-                        <div class="row d-flex align-items-stretch">
-                            <div class="col-md-6 mb-3 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>Модульная архитектура</h4>
-                                    <p>Разделение на core, models, ui и data слои</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>Система управления аудио</h4>
-                                    <p>На базе pygame с threading для фоновой музыки</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>Динамическая экономическая модель</h4>
-                                    <p>С модификаторами цен и случайными событиями</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>Автоматизированная сборка</h4>
-                                    <p>Через PyInstaller с кастомной конфигурацией</p>
-                                </div>
-                            </div>
-                        </div>
+                        </p>                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>КОМПОНЕНТ</th>
+                                    <th>РЕШЕНИЕ</th>
+                                    <th>ОПИСАНИЕ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ARCH</td>
+                                    <td>МОДУЛЬНАЯ АРХИТЕКТУРА</td>
+                                    <td>РАЗДЕЛЕНИЕ НА CORE, MODELS, UI И DATA СЛОИ</td>
+                                </tr>
+                                <tr>
+                                    <td>AUDIO</td>
+                                    <td>СИСТЕМА УПРАВЛЕНИЯ АУДИО</td>
+                                    <td>НА БАЗЕ PYGAME С THREADING ДЛЯ ФОНОВОЙ МУЗЫКИ</td>
+                                </tr>
+                                <tr>
+                                    <td>ECON</td>
+                                    <td>ДИНАМИЧЕСКАЯ ЭКОНОМИЧЕСКАЯ МОДЕЛЬ</td>
+                                    <td>С МОДИФИКАТОРАМИ ЦЕН И СЛУЧАЙНЫМИ СОБЫТИЯМИ</td>
+                                </tr>
+                                <tr>
+                                    <td>BUILD</td>
+                                    <td>АВТОМАТИЗИРОВАННАЯ СБОРКА</td>
+                                    <td>ЧЕРЕЗ PYINSTALLER С КАСТОМНОЙ КОНФИГУРАЦИЕЙ</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
@@ -154,57 +227,70 @@
             <div class="row mb-5">
                 <div class="col-lg-8 mx-auto">
                     <h2 class="case-section-title">Структура проекта</h2>                    <div class="case-content-section">
-                        <div class="row d-flex align-items-stretch">
-                            <div class="col-md-6 mb-3 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>core/</h4>
-                                    <p>Основная игровая логика (караваны, события, экономика, сохранения)</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>models/</h4>
-                                    <p>Модели данных (игрок, города, товары, аудиосистема)</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>ui/</h4>
-                                    <p>Пользовательские интерфейсы (GUI на CustomTkinter, CLI для терминала)</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-3 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>data/</h4>
-                                    <p>Конфигурация, музыкальные файлы, иконки и балансировка игры</p>
-                                </div>
-                            </div>
-                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>МОДУЛЬ</th>
+                                    <th>НАЗНАЧЕНИЕ</th>
+                                    <th>СОДЕРЖИМОЕ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>CORE/</td>
+                                    <td>ОСНОВНАЯ ИГРОВАЯ ЛОГИКА</td>
+                                    <td>КАРАВАНЫ, СОБЫТИЯ, ЭКОНОМИКА, СОХРАНЕНИЯ</td>
+                                </tr>
+                                <tr>
+                                    <td>MODELS/</td>
+                                    <td>МОДЕЛИ ДАННЫХ</td>
+                                    <td>ИГРОК, ГОРОДА, ТОВАРЫ, АУДИОСИСТЕМА</td>
+                                </tr>
+                                <tr>
+                                    <td>UI/</td>
+                                    <td>ПОЛЬЗОВАТЕЛЬСКИЕ ИНТЕРФЕЙСЫ</td>
+                                    <td>GUI НА CUSTOMTKINTER, CLI ДЛЯ ТЕРМИНАЛА</td>
+                                </tr>
+                                <tr>
+                                    <td>DATA/</td>
+                                    <td>КОНФИГУРАЦИЯ И РЕСУРСЫ</td>
+                                    <td>МУЗЫКАЛЬНЫЕ ФАЙЛЫ, ИКОНКИ, БАЛАНСИРОВКА ИГРЫ</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
-
-            <!-- Results -->
+            </div>            <!-- Results -->
             <div class="row mb-5">
-                <div class="col-12 text-center mb-4">
+                <div class="col-lg-8 mx-auto">
                     <h2 class="case-section-title">Результаты</h2>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="result-card">
-                        <h4>2</h4>
-                        <p>Полнофункциональных интерфейса (GUI и CLI)</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="result-card">
-                        <h4>10</h4>
-                        <p>Типов товаров с динамической экономикой</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="result-card">
-                        <h4>3</h4>
-                        <p>Уровня сложности для разных игроков</p>
+                    <div class="case-content-section">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>МЕТРИКА</th>
+                                    <th>ЗНАЧЕНИЕ</th>
+                                    <th>ОПИСАНИЕ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>UI-COUNT</td>
+                                    <td>2</td>
+                                    <td>ПОЛНОФУНКЦИОНАЛЬНЫХ ИНТЕРФЕЙСА (GUI И CLI)</td>
+                                </tr>
+                                <tr>
+                                    <td>GOODS-TYPE</td>
+                                    <td>10</td>
+                                    <td>ТИПОВ ТОВАРОВ С ДИНАМИЧЕСКОЙ ЭКОНОМИКОЙ</td>
+                                </tr>
+                                <tr>
+                                    <td>DIFF-LVL</td>
+                                    <td>3</td>
+                                    <td>УРОВНЯ СЛОЖНОСТИ ДЛЯ РАЗНЫХ ИГРОКОВ</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>            <!-- Key Features -->
@@ -212,79 +298,155 @@
                 <div class="col-lg-8 mx-auto">
                     <h2 class="case-section-title">Ключевые особенности</h2>
                     <div class="case-content-section">
-                        <div class="row d-flex align-items-stretch">
-                            <div class="col-md-6 mb-4 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>Двойной интерфейс</h4>
-                                    <p>GUI с современной графикой в античном стиле и CLI для любителей классических текстовых игр</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>Погружающая аудиосистема</h4>
-                                    <p>Тематическая музыка Древнего Рима с автоматическим воспроизведением и управлением</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>Комплексная игровая механика</h4>
-                                    <p>Система караванов, динамическая экономика, случайные события и три уровня сложности</p>
-                                </div>
-                            </div>
-                            <div class="col-md-6 mb-4 d-flex">
-                                <div class="process-step flex-fill">
-                                    <h4>Готовое к распространению</h4>
-                                    <p>Исполняемые файлы размером ~66MB, не требующие установки Python</p>
-                                </div>
-                            </div>
-                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ОСОБЕННОСТЬ</th>
+                                    <th>ОПИСАНИЕ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ДВОЙНОЙ ИНТЕРФЕЙС</td>
+                                    <td>GUI С СОВРЕМЕННОЙ ГРАФИКОЙ В АНТИЧНОМ СТИЛЕ И CLI ДЛЯ ЛЮБИТЕЛЕЙ КЛАССИЧЕСКИХ ТЕКСТОВЫХ ИГР</td>
+                                </tr>
+                                <tr>
+                                    <td>ПОГРУЖАЮЩАЯ АУДИОСИСТЕМА</td>
+                                    <td>ТЕМАТИЧЕСКАЯ МУЗЫКА ДРЕВНЕГО РИМА С АВТОМАТИЧЕСКИМ ВОСПРОИЗВЕДЕНИЕМ И УПРАВЛЕНИЕМ</td>
+                                </tr>
+                                <tr>
+                                    <td>КОМПЛЕКСНАЯ ИГРОВАЯ МЕХАНИКА</td>
+                                    <td>СИСТЕМА КАРАВАНОВ, ДИНАМИЧЕСКАЯ ЭКОНОМИКА, СЛУЧАЙНЫЕ СОБЫТИЯ И ТРИ УРОВНЯ СЛОЖНОСТИ</td>
+                                </tr>
+                                <tr>
+                                    <td>ГОТОВОЕ К РАСПРОСТРАНЕНИЮ</td>
+                                    <td>ИСПОЛНЯЕМЫЕ ФАЙЛЫ РАЗМЕРОМ ~66MB, НЕ ТРЕБУЮЩИЕ УСТАНОВКИ PYTHON</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div><!-- Technologies -->
+            </div>            <!-- Technologies -->
             <div class="row mb-5">
                 <div class="col-lg-8 mx-auto">
                     <h2 class="case-section-title">Используемые технологии</h2>
                     <div class="case-content-section">
-                        <div class="tech-stack">
-                            <div class="tech-item">Python 3.10+</div>
-                            <div class="tech-item">CustomTkinter</div>
-                            <div class="tech-item">Pygame</div>
-                            <div class="tech-item">PyInstaller</div>
-                            <div class="tech-item">Threading</div>
-                            <div class="tech-item">JSON</div>
-                            <div class="tech-item">Pillow</div>
-                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ТЕХНОЛОГИЯ</th>
+                                    <th>ТИП</th>
+                                    <th>НАЗНАЧЕНИЕ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>PYTHON 3.10+</td>
+                                    <td>ЯЗЫК</td>
+                                    <td>ОСНОВНОЙ ЯЗЫК РАЗРАБОТКИ</td>
+                                </tr>
+                                <tr>
+                                    <td>CUSTOMTKINTER</td>
+                                    <td>GUI ФРЕЙМВОРК</td>
+                                    <td>СОВРЕМЕННЫЙ ГРАФИЧЕСКИЙ ИНТЕРФЕЙС</td>
+                                </tr>
+                                <tr>
+                                    <td>PYGAME</td>
+                                    <td>АУДИО БИБЛИОТЕКА</td>
+                                    <td>УПРАВЛЕНИЕ ФОНОВОЙ МУЗЫКОЙ</td>
+                                </tr>
+                                <tr>
+                                    <td>PYINSTALLER</td>
+                                    <td>СБОРКА</td>
+                                    <td>СОЗДАНИЕ ИСПОЛНЯЕМЫХ ФАЙЛОВ</td>
+                                </tr>
+                                <tr>
+                                    <td>THREADING</td>
+                                    <td>СТАНДАРТНАЯ БИБЛИОТЕКА</td>
+                                    <td>МНОГОПОТОЧНОСТЬ ДЛЯ АУДИО</td>
+                                </tr>
+                                <tr>
+                                    <td>JSON</td>
+                                    <td>ФОРМАТ ДАННЫХ</td>
+                                    <td>СОХРАНЕНИЕ ИГРОВОГО СОСТОЯНИЯ</td>
+                                </tr>
+                                <tr>
+                                    <td>PILLOW</td>
+                                    <td>БИБЛИОТЕКА ИЗОБРАЖЕНИЙ</td>
+                                    <td>ОБРАБОТКА ГРАФИЧЕСКИХ РЕСУРСОВ</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
-
-            <!-- Project Timeline -->
+            </div>            <!-- Project Timeline -->
             <div class="row mb-5">
                 <div class="col-lg-8 mx-auto">
                     <h2 class="case-section-title">Временные рамки</h2>
                     <div class="case-content-section">
-                        <div class="result-card">
-                            <h4>1 месяц</h4>
-                            <p>Полный цикл разработки командой из 3 разработчиков с итеративным подходом и еженедельными релизами</p>
-                        </div>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ЭТАП</th>
+                                    <th>ДЛИТЕЛЬНОСТЬ</th>
+                                    <th>ОПИСАНИЕ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>ОБЩЕЕ ВРЕМЯ</td>
+                                    <td>1 МЕСЯЦ</td>
+                                    <td>ПОЛНЫЙ ЦИКЛ РАЗРАБОТКИ КОМАНДОЙ ИЗ 3 РАЗРАБОТЧИКОВ</td>
+                                </tr>
+                                <tr>
+                                    <td>ИТЕРАЦИИ</td>
+                                    <td>4 НЕДЕЛИ</td>
+                                    <td>ЕЖЕНЕДЕЛЬНЫЕ РЕЛИЗЫ С ИТЕРАТИВНЫМ ПОДХОДОМ</td>
+                                </tr>
+                                <tr>
+                                    <td>КОМАНДА</td>
+                                    <td>3 ЧЕЛОВЕКА</td>
+                                    <td>LEAD DEV/PM + 2 РАЗРАБОТЧИКА</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
-            </div>
-
-            <!-- Team -->
+            </div><!-- Team -->
             <div class="row mb-5">
                 <div class="col-lg-8 mx-auto">
                     <h2 class="case-section-title">Команда проекта</h2>
                     <div class="case-content-section">
-                        <ul>
-                            <li><strong>Ковтун Кирилл Евгеньевич</strong> - ведущий разработчик и проектный менеджер</li>
-                            <li><strong>Лахова Мария Александровна</strong> - разработчик</li>
-                            <li><strong>Хисматулин Ренат Амирович</strong> - разработчик</li>
-                        </ul>
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ФИО</th>
+                                    <th>РОЛЬ</th>
+                                    <th>ОТВЕТСТВЕННОСТЬ</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>КОВТУН КИРИЛЛ ЕВГЕНЬЕВИЧ</td>
+                                    <td>LEAD DEV / PM</td>
+                                    <td>АРХИТЕКТУРА, УПРАВЛЕНИЕ ПРОЕКТОМ, CORE ЛОГИКА</td>
+                                </tr>
+                                <tr>
+                                    <td>ЛАХОВА МАРИЯ АЛЕКСАНДРОВНА</td>
+                                    <td>DEVELOPER</td>
+                                    <td>GUI ИНТЕРФЕЙС, ПОЛЬЗОВАТЕЛЬСКИЙ ОПЫТ</td>
+                                </tr>
+                                <tr>
+                                    <td>ХИСМАТУЛИН РЕНАТ АМИРОВИЧ</td>
+                                    <td>DEVELOPER</td>
+                                    <td>CLI ИНТЕРФЕЙС, ТЕСТИРОВАНИЕ, ДОКУМЕНТАЦИЯ</td>
+                                </tr>
+                            </tbody>
+                        </table>
                         <p class="mt-3">
-                            Проект демонстрирует навыки создания комплексных приложений с современной архитектурой, 
-                            работы в команде и внимания к пользовательскому опыту. Сочетание технической сложности 
-                            с исторической тематикой делает игру уникальной в своем роде.
+                            ПРОЕКТ ДЕМОНСТРИРУЕТ НАВЫКИ СОЗДАНИЯ КОМПЛЕКСНЫХ ПРИЛОЖЕНИЙ С СОВРЕМЕННОЙ АРХИТЕКТУРОЙ, 
+                            РАБОТЫ В КОМАНДЕ И ВНИМАНИЯ К ПОЛЬЗОВАТЕЛЬСКОМУ ОПЫТУ. СОЧЕТАНИЕ ТЕХНИЧЕСКОЙ СЛОЖНОСТИ 
+                            С ИСТОРИЧЕСКОЙ ТЕМАТИКОЙ ДЕЛАЕТ ИГРУ УНИКАЛЬНОЙ В СВОЕМ РОДЕ.
                         </p>
                     </div>
                 </div>
@@ -293,15 +455,12 @@
             <!-- Links -->
             <div class="row mb-5">
                 <div class="col-lg-8 mx-auto">
-                    <h2 class="case-section-title">Ссылки на проект</h2>
-                    <div class="case-content-section text-center">
-                        <a href="https://github.com/lunarmolly/trading-house-cli" target="_blank" class="btn btn-accent-orange me-3 mb-3">
-                            <i class="fab fa-github me-2"></i>
-                            GitHub репозиторий
+                    <h2 class="case-section-title">Ссылки на проект</h2>                    <div class="case-content-section text-center">
+                        <a href="https://github.com/lunarmolly/trading-house-cli" target="_blank" class="btn">
+                            GITHUB РЕПОЗИТОРИЙ
                         </a>
-                        <a href="https://github.com/lunarmolly/trading-house-cli/releases" target="_blank" class="btn btn-outline-accent mb-3">
-                            <i class="fas fa-download me-2"></i>
-                            Скачать готовые сборки
+                        <a href="https://github.com/lunarmolly/trading-house-cli/releases" target="_blank" class="btn">
+                            СКАЧАТЬ ГОТОВЫЕ СБОРКИ
                         </a>
                     </div>
                     <div class="mt-4 text-center">
@@ -310,15 +469,13 @@
                         </p>
                     </div>
                 </div>
-            </div>
-
-            <!-- CTA Section -->
+            </div>            <!-- CTA Section -->
             <div class="case-cta">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h3>Хотите обсудить разработку вашей игры или приложения?</h3>
-                        <p>Свяжитесь со мной для консультации по вашему проекту</p>
-                        <a href="../index.html#contact" class="btn btn-accent-orange btn-lg">
+                        <h3>ХОТИТЕ ОБСУДИТЬ РАЗРАБОТКУ ВАШЕЙ ИГРЫ ИЛИ ПРИЛОЖЕНИЯ?</h3>
+                        <p class="case-image-caption">СВЯЖИТЕСЬ СО МНОЙ ДЛЯ КОНСУЛЬТАЦИИ ПО ВАШЕМУ ПРОЕКТУ</p>
+                        <a href="../index.html#contact" class="btn">
                             СВЯЗАТЬСЯ СО МНОЙ
                         </a>
                     </div>

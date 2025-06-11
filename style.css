@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.5rem;
     color: var(--text-primary);
 }
 
@@ -42,20 +42,20 @@ h4 { font-size: 1rem; line-height: 1.4; }
 .section-title {
     font-size: 1.4rem;
     color: var(--text-primary);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-align: center;
     font-family: 'Courier New', monospace;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-bottom: 2px solid var(--border-color);
-    padding-bottom: 1rem;
+    padding-bottom: 0.5rem;
 }
 
 .section-subtitle {
     font-size: 1rem;
     color: var(--text-secondary);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     text-align: center;
     font-family: 'Courier New', monospace;
     text-transform: uppercase;
@@ -67,13 +67,13 @@ h4 { font-size: 1rem; line-height: 1.4; }
 .cta-title {
     font-size: 1.2rem;
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
     font-family: 'Courier New', monospace;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-bottom: 1px solid var(--border-color);
-    padding-bottom: 0.5rem;
+    padding-bottom: 0.3rem;
 }
 
 /* Unified Links - All clickable elements have consistent underlines */
@@ -122,7 +122,7 @@ a:hover {
 table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     background: var(--bg-primary);
     font-family: 'Courier New', monospace;
     font-size: 11px;
@@ -154,7 +154,7 @@ tr:nth-child(even) {
     font-family: 'Courier New', monospace;
     font-size: 11px;
     width: 100%;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 .data-table th {
@@ -433,7 +433,7 @@ tr:nth-child(even) {
 
 /* Unified Section Styles */
 section {
-    padding: 80px 0;
+    padding: 40px 0;
     position: relative;
 }
 
@@ -451,10 +451,10 @@ section {
 
 /* All sections have consistent borders */
 .hero-section {
-    min-height: 100vh;
+    min-height: 80vh;
     display: flex;
     align-items: center;
-    padding-top: 80px;
+    padding-top: 60px;
     border-bottom: 2px solid var(--border-color);
 }
 
@@ -574,20 +574,20 @@ section {
 
 /* Unified Case Detail Pages */
 .case-detail-section {
-    padding: 6rem 0 4rem;
+    padding: 2rem 0 1rem;
     background: var(--bg-primary);
 }
 
 .case-hero {
     background: var(--bg-secondary);
-    padding: 6rem 0 4rem;
+    padding: 2rem 0 1rem;
     border-bottom: 2px solid var(--border-color);
 }
 
 .case-hero h1 {
     font-size: 1.8rem;
     color: var(--text-primary);
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
     text-align: center;
     font-family: 'Courier New', monospace;
     font-weight: bold;
@@ -605,17 +605,47 @@ section {
     letter-spacing: 0.5px;
 }
 
+/* Case content styling */
+.case-content-section {
+    padding: 3rem 0 2rem;
+    background: var(--bg-primary);
+}
+
+.case-main-title {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
 .case-section-title {
     font-size: 1.2rem;
     color: var(--text-primary);
-    margin-bottom: 2rem;
+    margin-bottom: 0.5rem;
     text-align: center;
     font-family: 'Courier New', monospace;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     border-bottom: 2px solid var(--border-color);
-    padding-bottom: 1rem;
+    padding-bottom: 0.3rem;
+}
+
+.case-text,
+.case-list {
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    line-height: 1.6;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.case-list li {
+    margin-bottom: 0.5rem;
 }
 
 .case-content-section a:not(.btn) {
@@ -629,24 +659,162 @@ section {
     text-decoration: none;
 }
 
-/* Case detail pages use unified data-table styling - no additional rules needed */
-
-.tech-badges {
-    margin: 1rem 0;
+/* Case CTA section */
+.case-cta {
+    margin: 2rem 0 1rem;
+    padding: 1.5rem;
+    border: 2px solid var(--border-color);
+    background: var(--bg-secondary);
+    text-align: center;
 }
 
-.tech-badge {
-    background: var(--text-primary);
-    color: var(--bg-primary);
-    padding: 4px 8px;
-    font-size: 10px;
-    font-weight: bold;
-    margin: 2px;
-    display: inline-block;
-    border: 1px solid var(--border-color);
+.case-cta h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
     font-family: 'Courier New', monospace;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.case-cta p {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+}
+
+/* Unified Image Styles for Cases - DIYR.dev inspired */
+.case-image-section {
+    background: var(--bg-secondary);
+    padding: 2rem 0;
+    border-top: 2px solid var(--border-color);
+    border-bottom: 2px solid var(--border-color);
+}
+
+.case-image-container {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 2rem;
+    border: 2px solid var(--border-color);
+    background: var(--bg-primary);
+}
+
+.case-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border: 2px solid var(--border-color);
+    background: var(--bg-primary);
+    display: block;
+    margin: 0 auto;
+    font-family: 'Courier New', monospace;
+}
+
+.case-image-caption {
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 1rem;
+    line-height: 1.4;
+    text-align: center;
+}
+
+/* Override Bootstrap image styles for consistency */
+.case-image-container .img-fluid {
+    border: 2px solid var(--border-color) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: var(--bg-primary) !important;
+}
+
+.case-image-container .rounded {
+    border-radius: 0 !important;
+}
+
+.case-image-container .shadow-lg {
+    box-shadow: none !important;
+}
+
+/* Remove all Bootstrap styling that conflicts */
+.case-image-container img {
+    border: 2px solid var(--border-color) !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: var(--bg-primary) !important;
+}
+
+/* Fixed Back to Cases Button */
+.back-to-cases-fixed {
+    position: fixed;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%) rotate(-90deg);
+    z-index: 999;
+    background: var(--bg-primary);
+    border: 2px solid var(--border-color);
+    padding: 8px 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    transform-origin: center;
+    white-space: nowrap;
+}
+
+.back-to-cases-fixed:hover {
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    text-decoration: none;
+    transform: translateY(-50%) rotate(-90deg) scale(1.05);
+}
+
+.back-to-cases-fixed span {
+    margin-left: 8px;
+    font-size: 9px;
+    letter-spacing: 0.5px;
+}
+
+.back-to-cases-fixed i {
+    font-size: 10px;
+}
+
+/* Mobile adjustments for back button */
+@media (max-width: 768px) {
+    .back-to-cases-fixed {
+        left: 10px;
+        padding: 8px 12px;
+        font-size: 10px;
+    }
+    
+    .back-to-cases-fixed span {
+        font-size: 9px;
+    }
+    
+    .back-to-cases-fixed i {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .back-to-cases-fixed {
+        left: 5px;
+        padding: 6px 8px;
+        font-size: 9px;
+    }
+    
+    .back-to-cases-fixed span {
+        font-size: 8px;
+    }
 }
 
 /* Unified Responsive Design */
