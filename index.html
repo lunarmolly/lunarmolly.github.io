@@ -28,7 +28,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <a class="navbar-brand" href="#hero">
-                    <span class="brand-text">KVTN</span>
+                    <span class="brand-text">KVTNLAB</span>
                 </a>                <button class="navbar-toggler" type="button" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon">
                         <span></span>
@@ -61,329 +61,378 @@
           <!-- Mobile Menu (Full Screen) -->
         <div class="mobile-menu-fullscreen" id="mobileMenu">
             <div class="mobile-menu-header">
-                <h5 class="mobile-menu-title">МЕНЮ</h5>
-                <button type="button" class="mobile-menu-close" id="mobileMenuClose">
-                    <span></span>
-                    <span></span>
+                <h5 class="mobile-menu-title">МЕНЮ</h5>                <button type="button" class="mobile-menu-close" id="mobileMenuClose">
+                    ×
                 </button>
-            </div>
-            <div class="mobile-menu-body">
-                <ul class="mobile-nav">
-                    <li class="mobile-nav-item">
-                        <a class="mobile-nav-link" href="#hero">ГЛАВНАЯ</a>
-                    </li>
-                    <li class="mobile-nav-item">
-                        <a class="mobile-nav-link" href="#about">ОБО МНЕ</a>
-                    </li>
-                    <li class="mobile-nav-item">
-                        <a class="mobile-nav-link" href="#services">УСЛУГИ</a>
-                    </li>
-                    <li class="mobile-nav-item">
-                        <a class="mobile-nav-link" href="#cases">КЕЙСЫ</a>
-                    </li>
-                    <li class="mobile-nav-item">
-                        <a class="mobile-nav-link" href="#contact">КОНТАКТЫ</a>
-                    </li>
-                </ul>
+            </div>            <div class="mobile-menu-body">
+                <table class="mobile-nav-table data-table">
+                    <thead>
+                        <tr>
+                            <th>РАЗДЕЛ</th>
+                            <th>ОПИСАНИЕ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a class="mobile-nav-link" href="#hero">ГЛАВНАЯ</a></td>
+                            <td>ОСНОВНАЯ ИНФОРМАЦИЯ И КОНТАКТЫ</td>
+                        </tr>
+                        <tr>
+                            <td><a class="mobile-nav-link" href="#about">ОБО МНЕ</a></td>
+                            <td>ОПЫТ И ТЕХНИЧЕСКИЙ СТЕК</td>
+                        </tr>
+                        <tr>
+                            <td><a class="mobile-nav-link" href="#services">УСЛУГИ</a></td>
+                            <td>ПРЕДЛОЖЕНИЯ И СТОИМОСТЬ</td>
+                        </tr>
+                        <tr>
+                            <td><a class="mobile-nav-link" href="#cases">КЕЙСЫ</a></td>
+                            <td>ПОРТФОЛИО ВЫПОЛНЕННЫХ ПРОЕКТОВ</td>
+                        </tr>
+                        <tr>
+                            <td><a class="mobile-nav-link" href="#contact">КОНТАКТЫ</a></td>
+                            <td>СВЯЗЬ И ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
-    </header>
-
-    <!-- Hero Section -->
+    </header>    <!-- Hero Section -->
     <section id="hero" class="hero-section">
         <div class="container">
             <div class="row align-items-center min-vh-100">
-                <div class="col-lg-6 text-center text-lg-start">                    <div class="hero-content">
-                        <div class="hero-image mb-4 d-lg-none">
-                            <img src="images/avatar.jpg" alt="Кирилл Ковтун" class="rounded-circle">
-                        </div>
-                        <h1 class="hero-title mb-4">
-                            <span class="d-block text-accent-green">КИРИЛЛ КОВТУН</span>
-                            <span class="d-block">ПРОЕКТНЫЙ МЕНЕДЖЕР</span>
-                            <span class="d-block">АНАЛИТИК ДАННЫХ</span>
-                            <span class="d-block">РАЗРАБОТЧИК</span>
+                <div class="col-lg-8 mx-auto">
+                    <div class="hero-content text-center">                        <h1 class="hero-title mb-4">
+                            КИРИЛЛ КОВТУН<br>
+                            ПРОЕКТНЫЙ МЕНЕДЖЕР / АНАЛИТИК ДАННЫХ / РАЗРАБОТЧИК
                         </h1>
-                        <p class="hero-description">
-                            Помогаю бизнесу становиться эффективнее с помощью данных, автоматизации и технологий
-                        </p>
-                        <a href="#contact" class="btn btn-accent-orange btn-lg mt-4">
-                            СВЯЗАТЬСЯ СО МНОЙ
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-6 text-center d-none d-lg-block">
-                    <div class="hero-image">
-                        <img src="images/avatar.jpg" alt="Кирилл Ковтун" class="rounded-circle">
+                        <div class="hero-description mb-4">
+                            <table class="hero-info-table data-table">
+                                <thead>
+                                    <tr>
+                                        <th>ОПЫТ</th>
+                                        <th>СПЕЦИАЛИЗАЦИЯ</th>
+                                        <th>ЛОКАЦИЯ</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>2 ГОДА</td>
+                                        <td>АВТОМАТИЗАЦИЯ БИЗНЕСА</td>
+                                        <td>УДАЛЕННО/МОСКВА</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <!-- <div class="hero-actions">
+                            <a href="#contact" class="btn">КОНТАКТЫ</a>
+                            <a href="#services" class="btn">УСЛУГИ</a>
+                            <a href="#cases" class="btn">КЕЙСЫ</a>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- About Section -->
+    </section>    <!-- About Section -->
     <section id="about" class="about-section py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title">ОБО МНЕ</h2>
+            <div class="row">                <div class="col-12 mb-4">
+                    <h2 class="section-title">ОБО МНЕ / ОПЫТ</h2>
                 </div>
             </div>
             
-            <div class="row mb-5">
-                <div class="col-lg-8 mx-auto text-center">
-                    <p class="about-description">
-                        5 лет опыта в ведении проектов и разработке. Работал с десятками клиентов из малого и среднего бизнеса, 
-                        помогая им достигать измеримых результатов.
-                    </p>
-                </div>
-            </div>
-            
-            <!-- Stats -->
-            <div class="row mb-5">
-                <div class="col-md-6 text-center mb-4">
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="5">0</div>
-                        <div class="stat-label">ЛЕТ ОПЫТА</div>
-                    </div>
-                </div>
-                <div class="col-md-6 text-center mb-4">
-                    <div class="stat-card">
-                        <div class="stat-number" data-target="35">0</div>
-                        <div class="stat-label">ЗАВЕРШЕННЫХ ПРОЕКТОВ</div>
-                    </div>
+            <div class="row mb-4">
+                <div class="col-12">
+                    <table class="stats-table data-table">                        <thead>
+                            <tr>
+                                <th>МЕТРИКА</th>
+                                <th>ЗНАЧЕНИЕ</th>
+                                <th>ОПИСАНИЕ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>YRS-EXP</td>
+                                <td>2</td>
+                                <td>ГОДА В УПРАВЛЕНИИ ПРОЕКТАМИ И РАЗРАБОТКЕ</td>
+                            </tr>
+                            <tr>
+                                <td>PRJ-COMP</td>
+                                <td>35+</td>
+                                <td>ЗАВЕРШЕННЫХ ПРОЕКТОВ ДЛЯ МАЛОГО И СРЕДНЕГО БИЗНЕСА</td>
+                            </tr>
+                            <tr>
+                                <td>SPEC</td>
+                                <td>AUTOMATION</td>
+                                <td>ОПТИМИЗАЦИЯ БИЗНЕС-ПРОЦЕССОВ И АНАЛИЗ ДАННЫХ</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             
             <!-- Tech Stack -->
             <div class="row">
-                <div class="col-12 text-center mb-4">
-                    <h3 class="stack-title">СТЕК ТЕХНОЛОГИЙ</h3>
+                <div class="col-12 mb-3">
+                    <h3 class="stack-title">ТЕХНИЧЕСКИЙ СТЕК / ИНСТРУМЕНТЫ</h3>
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">                    <div class="tech-stack">
-                        <div class="tech-item">Python</div>
-                        <div class="tech-item">Aiogram</div>
-                        <div class="tech-item">Pandas</div>
-                        <div class="tech-item">NumPy</div>
-                        <div class="tech-item">SciPy</div>
-                        <div class="tech-item">Matplotlib</div>
-                        <div class="tech-item">Seaborn</div>
-                        <div class="tech-item">Plotly</div>
-                        <div class="tech-item">scikit-learn</div>
-                        <div class="tech-item">Streamlit</div>
-                        <div class="tech-item">CustomTkinter</div>
-                        <div class="tech-item">Pygame</div>
-                        <div class="tech-item">PyInstaller</div>
-                        <div class="tech-item">Google Sheets API</div>
-                        <div class="tech-item">Tilda</div>
-                        <div class="tech-item">Bitrix24</div>
-                    </div>
+                <div class="col-12">                    <table class="tech-stack-table data-table">                        <thead>
+                            <tr>
+                                <th>КАТЕГОРИЯ</th>
+                                <th>ТЕХНОЛОГИЯ</th>
+                                <th>ПРИМЕНЕНИЕ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>LANG</td>
+                                <td>PYTHON</td>
+                                <td>АНАЛИЗ ДАННЫХ, АВТОМАТИЗАЦИЯ, РАЗРАБОТКА БОТОВ</td>
+                            </tr>
+                            <tr>
+                                <td>FRM</td>
+                                <td>AIOGRAM</td>
+                                <td>ФРЕЙМВОРК ДЛЯ TELEGRAM БОТОВ</td>
+                            </tr>
+                            <tr>
+                                <td>LIB</td>
+                                <td>PANDAS</td>
+                                <td>ОБРАБОТКА И АНАЛИЗ ДАННЫХ</td>
+                            </tr>
+                            <tr>
+                                <td>LIB</td>
+                                <td>NUMPY</td>
+                                <td>ЧИСЛЕННЫЕ ВЫЧИСЛЕНИЯ</td>
+                            </tr>
+                            <tr>
+                                <td>LIB</td>
+                                <td>MATPLOTLIB</td>
+                                <td>ВИЗУАЛИЗАЦИЯ ДАННЫХ</td>
+                            </tr>
+                            <tr>
+                                <td>LIB</td>
+                                <td>PLOTLY</td>
+                                <td>ИНТЕРАКТИВНЫЕ ДАШБОРДЫ</td>
+                            </tr>
+                            <tr>
+                                <td>LIB</td>
+                                <td>SCIKIT-LEARN</td>
+                                <td>МАШИННОЕ ОБУЧЕНИЕ</td>
+                            </tr>
+                            <tr>
+                                <td>LIB</td>
+                                <td>STREAMLIT</td>
+                                <td>ИНТЕРАКТИВНЫЕ ДАШБОРДЫ И ПРОТОТИПЫ</td>
+                            </tr>
+                            <tr>
+                                <td>SVC</td>
+                                <td>GOOGLE SHEETS API</td>
+                                <td>ИНТЕГРАЦИЯ ДАННЫХ</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Services Section -->
+    </section>    <!-- Services Section -->
     <section id="services" class="services-section py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title">УСЛУГИ</h2>
-                    <p class="section-subtitle">Предоставляю комплексные решения бизнесу и физическим лицам</p>
+            <div class="row">                <div class="col-12 mb-4">
+                    <h2 class="section-title">УСЛУГИ / СТОИМОСТЬ</h2>
+                    <p class="section-subtitle">КОМПЛЕКСНЫЕ РЕШЕНИЯ ДЛЯ БИЗНЕСА И ЧАСТНЫХ ЛИЦ</p>
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-comments"></i>
-                        </div>
-                        <h4 class="service-title">КОНСУЛЬТАЦИЯ</h4>
-                        <p class="service-description">
-                            Оценка задач, подбор решений и рекомендации
-                        </p>
-                        <div class="service-price">500 ₽/час</div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-project-diagram"></i>
-                        </div>
-                        <h4 class="service-title">ВЕДЕНИЕ ПРОЕКТОВ</h4>
-                        <p class="service-description">
-                            Полное сопровождение ИТ-проекта: от пресейла до релиза
-                        </p>
-                        <div class="service-price">600 ₽/час</div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-chart-line"></i>
-                        </div>
-                        <h4 class="service-title">АНАЛИЗ ДАННЫХ</h4>
-                        <p class="service-description">
-                            Обработка, визуализация и выводы на основе данных
-                        </p>
-                        <div class="service-price">от 1 000 ₽/час</div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-code"></i>
-                        </div>
-                        <h4 class="service-title">РАЗРАБОТКА</h4>
-                        <p class="service-description">
-                            Создание чат-ботов, скриптов, автоматизации процессов под ключ
-                        </p>
-                        <div class="service-price">от 800 ₽/час</div>
-                    </div>
+              <div class="row">
+                <div class="col-12">                    <table class="services-table data-table">                        <thead>
+                            <tr>
+                                <th>КОД</th>
+                                <th>УСЛУГА</th>
+                                <th>ОПИСАНИЕ</th>
+                                <th>СТОИМОСТЬ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CON</td>
+                                <td><strong>КОНСАЛТИНГ</strong></td>
+                                <td>АНАЛИЗ ТЕКУЩЕЙ ИНФРАСТРУКТУРЫ, ПРОЕКТИРОВАНИЕ РЕШЕНИЙ И РЕКОМЕНДАЦИИ</td>
+                                <td class="service-price">500 ₽/час</td>
+                            </tr>
+                            <tr>
+                                <td>PMG</td>
+                                <td><strong>УПРАВЛЕНИЕ ПРОЕКТАМИ</strong></td>
+                                <td>ПОЛНЫЙ ЖИЗНЕННЫЙ ЦИКЛ IT-ПРОЕКТА: ОТ ПРЕСЕЙЛА ДО РЕЛИЗА</td>
+                                <td class="service-price">договорная</td>
+                            </tr>
+                            <tr>
+                                <td>ANA</td>
+                                <td><strong>АНАЛИЗ ДАННЫХ</strong></td>
+                                <td>СБОР И ОБРАБОТКА ДАННЫХ, ВИЗУАЛИЗАЦИЯ</td>
+                                <td class="service-price">от 3000 ₽</td>
+                            </tr>
+                            <tr>
+                                <td>DEV</td>
+                                <td><strong>РАЗРАБОТКА</strong></td>
+                                <td>БОТЫ, СКРИПТЫ, АВТОМАТИЗАЦИЯ ПРОЦЕССОВ</td>
+                                <td class="service-price">от 3000 ₽</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Cases Section -->
+    </section>    <!-- Cases Section -->
     <section id="cases" class="cases-section py-5">
         <div class="container">
-            <div class="row">
-                <div class="col-12 text-center mb-5">
-                    <h2 class="section-title">КЕЙСЫ</h2>
-                    <p class="section-subtitle">Ваш проект готов оказаться в этом списке?</p>
+            <div class="row">                <div class="col-12 mb-4">
+                    <h2 class="section-title">КЕЙСЫ / ПОРТФОЛИО</h2>
+                    <p class="section-subtitle">ГОТОВЫ ДОБАВИТЬ ВАШ ПРОЕКТ В ЭТОТ СПИСОК?</p>
                 </div>
             </div>
             
             <!-- Filter Buttons -->
             <div class="row mb-4">
-                <div class="col-12 text-center">                    <div class="filter-buttons">
+                <div class="col-12">                    <div class="filter-buttons">
                         <button class="filter-btn active" data-filter="all">ВСЕ</button>
-                        <button class="filter-btn" data-filter="management">ВЕДЕНИЕ ПРОЕКТОВ</button>
-                        <button class="filter-btn" data-filter="analytics">АНАЛИЗ ДАННЫХ</button>
-                        <button class="filter-btn" data-filter="development">РАЗРАБОТКА</button>
+                        <button class="filter-btn" data-filter="management">PMG</button>
+                        <button class="filter-btn" data-filter="analytics">ANA</button>
+                        <button class="filter-btn" data-filter="development">DEV</button>
                     </div>
                 </div>
             </div>            <!-- Cases Grid -->
-            <div class="row cases-grid">                <div class="col-lg-4 col-md-6 mb-4 case-item" data-category="development">
-                    <div class="case-card">
-                        <div class="case-content">
-                            <h4 class="case-title">Разработка персонального сайта-портфолио</h4>
-                            <p class="case-description">
-                                Создание кастомного сайта-портфолио с уникальным дизайном и современными технологиями
-                            </p>
-                            <a href="cases/case-portfolio.html" class="btn btn-outline-accent">
-                                ПОДРОБНЕЕ
-                            </a>
-                        </div>
-                    </div>                </div>
-
-                <div class="col-lg-4 col-md-6 mb-4 case-item" data-category="development">
-                    <div class="case-card">
-                        <div class="case-content">
-                            <h4 class="case-title">Прототип игры "Торговый Дом"</h4>
-                            <p class="case-description">
-                                Полнофункциональная торговая стратегия с античной тематикой, двойным интерфейсом и аудиосистемой
-                            </p>
-                            <a href="cases/case-trading-house.html" class="btn btn-outline-accent">
-                                ПОДРОБНЕЕ
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4 case-item" data-category="analytics">
-                    <div class="case-card">
-                        <div class="case-content">
-                            <h4 class="case-title">Анализ посуточной аренды квартир в Москве</h4>
-                            <p class="case-description">
-                                Полный цикл анализа данных: от парсинга до дашборда с выявлением закономерностей рынка
-                            </p>
-                            <a href="cases/case-rental-analysis.html" class="btn btn-outline-accent">
-                                ПОДРОБНЕЕ
-                            </a>
-                        </div>
-                    </div>                </div>
-                
-                <div class="col-lg-4 col-md-6 mb-4 case-item" data-category="management">
-                    <div class="case-card">
-                        <div class="case-content">
-                            <h4 class="case-title">Сайт для спортивно-гостиничного комплекса «Возрождение»</h4>
-                            <p class="case-description">
-                                Создание первого официального сайта для комплекса с нуля: от концепции до релиза
-                            </p>
-                            <a href="cases/case-vozrozhdenie.html" class="btn btn-outline-accent">
-                                ПОДРОБНЕЕ
-                            </a>
-                        </div>
-                    </div>
+            <div class="row cases-grid">
+                <div class="col-12">                    <table class="cases-table data-table">                        <thead>
+                            <tr>
+                                <th>КОД</th>
+                                <th>НАЗВАНИЕ ПРОЕКТА</th>
+                                <th>ТИП</th>
+                                <th>ОПИСАНИЕ</th>
+                            </tr>
+                        </thead>                        <tbody>
+                            <tr class="case-item" data-category="development">
+                                <td><a href="cases/case-portfolio.html">DEV-BRUT</a></td>
+                                <td><a href="cases/case-portfolio.html"><strong class="case-title">ПЕРСОНАЛЬНЫЙ САЙТ-ПОРТФОЛИО</strong></a></td>
+                                <td>DEV</td>
+                                <td class="case-description">КАСТОМНЫЙ САЙТ-ПОРТФОЛИО С УНИКАЛЬНЫМ ДИЗАЙНОМ И СОВРЕМЕННЫМИ ТЕХНОЛОГИЯМИ</td>
+                            </tr>
+                            <tr class="case-item" data-category="development">
+                                <td><a href="cases/case-tempmail-bot.html">DEV-MAIL</a></td>
+                                <td><a href="cases/case-tempmail-bot.html"><strong class="case-title">TELEGRAM-БОТ "МГНОВЕННАЯ ПОЧТА"</strong></a></td>
+                                <td>DEV</td>
+                                <td class="case-description">СЕРВИС ВРЕМЕННЫХ EMAIL-АДРЕСОВ С ИНТЕГРАЦИЕЙ API И УВЕДОМЛЕНИЯМИ</td>
+                            </tr>
+                            <tr class="case-item" data-category="development">
+                                <td><a href="cases/case-trading-house.html">DEV-TRAD</a></td>
+                                <td><a href="cases/case-trading-house.html"><strong class="case-title">ПРОТОТИП ИГРЫ "ТОРГОВЫЙ ДОМ"</strong></a></td>
+                                <td>DEV</td>
+                                <td class="case-description">ПОЛНОФУНКЦИОНАЛЬНАЯ ТОРГОВАЯ СТРАТЕГИЯ С АНТИЧНОЙ ТЕМАТИКОЙ И ДВОЙНЫМ UI</td>
+                            </tr>
+                            <tr class="case-item" data-category="analytics">
+                                <td><a href="cases/case-rental-analysis.html">ANA-RENT</a></td>
+                                <td><a href="cases/case-rental-analysis.html"><strong class="case-title">АНАЛИЗ РЫНКА ПОСУТОЧНОЙ АРЕНДЫ МОСКВЫ</strong></a></td>
+                                <td>ANA</td>
+                                <td class="case-description">ПОЛНЫЙ ЦИКЛ ДАННЫХ: ОТ ПАРСИНГА ДО ДАШБОРДА</td>
+                            </tr>
+                            <tr class="case-item" data-category="management">
+                                <td><a href="cases/case-vozrozhdenie.html">PMG-HOTEL</a></td>
+                                <td><a href="cases/case-vozrozhdenie.html"><strong class="case-title">САЙТ СПОРТИВНО-ГОСТИНИЧНОГО КОМПЛЕКСА "ВОЗРОЖДЕНИЕ"</strong></a></td>
+                                <td>PMG</td>
+                                <td class="case-description">ПЕРВЫЙ ОФИЦИАЛЬНЫЙ САЙТ ОТ КОНЦЕПЦИИ ДО РЕЛИЗА</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- Footer -->
+    </section>    <!-- Footer -->
     <footer id="contact" class="footer-section py-5">
         <div class="container">
             <!-- CTA Section -->
             <div class="row mb-5">
-                <div class="col-12 text-center">
-                    <h2 class="cta-title mb-4">ГОТОВЫ ОБСУДИТЬ ВАШ ПРОЕКТ?</h2>
+                <div class="col-12">                    <h2 class="cta-title mb-4">ГОТОВЫ ОБСУДИТЬ ВАШ ПРОЕКТ?</h2>
                     <p class="cta-description mb-4">
-                        Напишите мне в Telegram для быстрого ответа!
+                        СВЯЗЫВАЙТЕСЬ ЧЕРЕЗ TELEGRAM ДЛЯ БЫСТРОГО ОТВЕТА
                     </p>
-                    <a href="https://t.me/solarmolly" class="btn btn-accent-orange btn-lg cta-button" target="_blank">
-                        <i class="fab fa-telegram-plane me-2"></i>
-                        НАПИСАТЬ В TELEGRAM
-                    </a>
-                </div>
-            </div>            <!-- Contacts and Details -->
-            <div class="row justify-content-center">
-                <div class="col-lg-5 col-md-6 mb-4 offset-lg-1">
-                    <h3 class="footer-section-title">КОНТАКТЫ</h3>
-                    <div class="contacts-priority-section">
-                        <div class="contact-info">
-                            <div class="contact-item priority-contact">
-                                <i class="fas fa-envelope"></i>
-                                <a href="mailto:kovtun@headmaitre.ru">kovtun@headmaitre.ru</a>
-                            </div>                            <div class="contact-item priority-contact">
-                                <i class="fas fa-phone"></i>
-                                <span class="phone-copy" data-phone="+79934904280">+7 (993) 490-42-80</span>
-                            </div>
-                            <div class="contact-item priority-contact">
-                                <i class="fab fa-telegram-plane"></i>
-                                <a href="https://t.me/solarmolly" target="_blank">solarmolly</a>
-                            </div>
-                            <div class="contact-item priority-contact">
-                                <i class="fab fa-github"></i>
-                                <a href="https://github.com/lunarmolly" target="_blank">lunarmolly</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="col-lg-5 col-md-6 mb-4">
-                    <h3 class="footer-section-title">РЕКВИЗИТЫ</h3>
-                    <div class="details-info">
-                        <div class="detail-item">ИП Ковтун Кирилл Евгеньевич</div>
-                        <div class="detail-item">ИНН: 280444043500</div>
-                        <div class="detail-item">Р/с: 40802810420000650382</div>
-                        <div class="detail-item">Банк: ООО "Банк Точка"</div>
-                        <div class="detail-item">БИК: 044525104</div>
-                        <div class="detail-item">Корр. счет: 30101810745374525104</div>
+                    <div class="cta-actions">
+                        <a href="https://t.me/solarmolly" class="btn" target="_blank">TELEGRAM</a>
                     </div>
                 </div>
             </div>
+
+            <!-- Contacts and Details -->
+            <div class="row">
+                <div class="col-lg-6 mb-4">                    <h3 class="footer-section-title">КОНТАКТЫ / СВЯЗЬ</h3>
+                    <table class="contacts-table data-table">
+                        <thead>
+                            <tr>
+                                <th>ТИП</th>
+                                <th>ЗНАЧЕНИЕ</th>
+                            </tr>
+                        </thead>
+                        <tbody>                            <tr>
+                                <td>EMAIL</td>
+                                <td><a href="mailto:ethermolly@yandex.ru">ethermolly@yandex.ru</a></td>
+                            </tr>
+                            <tr>
+                                <td>ТЕЛЕФОН</td>
+                                <td><span class="phone-copy" data-phone="+79934904280">+7 (993) 490-42-80</span></td>
+                            </tr>
+                            <tr>
+                                <td>TG</td>
+                                <td><a href="https://t.me/solarmolly" target="_blank">@solarmolly</a></td>
+                            </tr>
+                            <tr>
+                                <td>GH</td>
+                                <td><a href="https://github.com/lunarmolly" target="_blank">lunarmolly</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="col-lg-6 mb-4">                    <h3 class="footer-section-title">ЮРИДИЧЕСКАЯ / БИЗНЕС ИНФОРМАЦИЯ</h3>
+                    <table class="details-table data-table">
+                        <thead>
+                            <tr>
+                                <th>ПОЛЕ</th>
+                                <th>ЗНАЧЕНИЕ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>ЛИЦО</td>
+                                <td>ИП КОВТУН КИРИЛЛ ЕВГЕНЬЕВИЧ</td>
+                            </tr>
+                            <tr>
+                                <td>ИНН</td>
+                                <td>280444043500</td>
+                            </tr>
+                            <tr>
+                                <td>Р/С</td>
+                                <td>40802810420000650382</td>
+                            </tr>
+                            <tr>
+                                <td>БАНК</td>
+                                <td>ООО "БАНК ТОЧКА"</td>
+                            </tr>
+                            <tr>
+                                <td>БИК</td>
+                                <td>044525104</td>
+                            </tr>
+                            <tr>
+                                <td>КОРР-СЧЕТ</td>
+                                <td>30101810745374525104</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
             
-            <hr class="footer-divider">
-            
-            <div class="row">                <div class="col-12 text-center">
-                    <p class="copyright">© 2025 Кирилл Ковтун</p>
+            <div class="row">
+                <div class="col-12">
+                    <hr class="footer-divider">
+                    <p class="copyright">© 2025 КИРИЛЛ КОВТУН</p>
                 </div>
             </div>
         </div>
