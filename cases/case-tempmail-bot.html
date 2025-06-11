@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кейс: Telegram-бот "Мгновенная почта" - Кирилл Ковтун</title>
+    
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
+    <link rel="manifest" href="../images/site.webmanifest">
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header-main fixed-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="../index.html">
+                    <span class="brand-text">KVTN</span>
+                </a>                
+                <button class="navbar-toggler" type="button" id="mobileMenuToggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+                
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">ГЛАВНАЯ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#about">ОБО МНЕ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#services">УСЛУГИ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#cases">КЕЙСЫ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html#contact">КОНТАКТЫ</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Mobile Menu (Full Screen) -->
+        <div class="mobile-menu-fullscreen" id="mobileMenu">
+            <div class="mobile-menu-header">
+                <h5 class="mobile-menu-title">МЕНЮ</h5>
+                <button type="button" class="mobile-menu-close" id="mobileMenuClose">
+                    ×
+                </button>
+            </div>
+            <div class="mobile-menu-body">
+                <table class="mobile-nav-table data-table">
+                    <thead>
+                        <tr>
+                            <th>РАЗДЕЛ</th>
+                            <th>ОПИСАНИЕ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><a class="mobile-nav-link" href="../index.html">ГЛАВНАЯ</a></td>
+                            <td>ОСНОВНАЯ ИНФОРМАЦИЯ И КОНТАКТЫ</td>
+                        </tr>
+                        <tr>
+                            <td><a class="mobile-nav-link" href="../index.html#about">ОБО МНЕ</a></td>
+                            <td>ОПЫТ И ТЕХНИЧЕСКИЙ СТЕК</td>
+                        </tr>
+                        <tr>
+                            <td><a class="mobile-nav-link" href="../index.html#services">УСЛУГИ</a></td>
+                            <td>ПРЕДЛОЖЕНИЯ И СТОИМОСТЬ</td>
+                        </tr>
+                        <tr>
+                            <td><a class="mobile-nav-link" href="../index.html#cases">КЕЙСЫ</a></td>
+                            <td>ПОРТФОЛИО ВЫПОЛНЕННЫХ ПРОЕКТОВ</td>
+                        </tr>
+                        <tr>
+                            <td><a class="mobile-nav-link" href="../index.html#contact">КОНТАКТЫ</a></td>
+                            <td>СВЯЗЬ И ЮРИДИЧЕСКАЯ ИНФОРМАЦИЯ</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </header>
+
+    <!-- Fixed Back to Cases Button -->
+    <a href="../index.html#cases" class="back-to-cases-fixed">
+        <i class="fas fa-arrow-left"></i>
+        <span>НАЗАД К КЕЙСАМ</span>
+    </a>
+
+    <!-- Case Hero Section -->
+    <section class="case-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Скрытая кнопка для сохранения структуры -->
+                    <div style="visibility: hidden; height: 0; overflow: hidden;">
+                        <a href="../index.html#cases" class="btn btn-outline-accent">
+                            <i class="fas fa-arrow-left me-2"></i>
+                            НАЗАД К КЕЙСАМ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Content -->
+    <section class="case-content-section py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <h1 class="case-main-title mb-4">Telegram-бот "Мгновенная почта"</h1>
+
+                    <h2 class="case-section-title">Описание проекта</h2>
+                    <p class="case-text">
+                        Telegram-бот для создания временных email-адресов с автоматическим получением входящих писем и уведомлений пользователя. Проект решает задачу быстрого получения временного email для регистраций, верификаций и тестирования без необходимости раскрывать личную почту.
+                    </p>
+                    <p class="case-text">
+                        Бот интегрирован с внешним API временной почты и предоставляет удобный интерфейс для управления почтовыми ящиками прямо в Telegram. Пользователи могут создавать адреса, проверять входящие сообщения и получать уведомления в реальном времени.
+                    </p>
+
+                    <h2 class="case-section-title">Клиент</h2>
+                    <p class="case-text">
+                        Учебный проект — Ковтун Кирилл. Создан как практическое применение навыков работы с aiogram, внешними сервисами и асинхронным программированием.
+                    </p>
+
+                    <h2 class="case-section-title">Технические характеристики</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>КОМПОНЕНТ</th>
+                                <th>ТЕХНОЛОГИЯ</th>
+                                <th>НАЗНАЧЕНИЕ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>BOT-FRM</td>
+                                <td>AIOGRAM 3</td>
+                                <td>ФРЕЙМВОРК ДЛЯ РАЗРАБОТКИ TELEGRAM БОТОВ</td>
+                            </tr>
+                            <tr>
+                                <td>LANG</td>
+                                <td>PYTHON 3.11</td>
+                                <td>ОСНОВНОЙ ЯЗЫК РАЗРАБОТКИ</td>
+                            </tr>
+                            <tr>
+                                <td>HTTP</td>
+                                <td>AIOHTTP</td>
+                                <td>АСИНХРОННЫЕ HTTP-ЗАПРОСЫ К API</td>
+                            </tr>
+                            <tr>
+                                <td>API</td>
+                                <td>TEMPORARY EMAIL SERVICE</td>
+                                <td>ВНЕШНИЙ СЕРВИС ДЛЯ СОЗДАНИЯ ВРЕМЕННЫХ АДРЕСОВ</td>
+                            </tr>
+                            <tr>
+                                <td>ASYNC</td>
+                                <td>ASYNCIO</td>
+                                <td>АСИНХРОННАЯ ОБРАБОТКА ЗАПРОСОВ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 class="case-section-title">Функциональные возможности</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ФУНКЦИЯ</th>
+                                <th>ОПИСАНИЕ</th>
+                                <th>КОМАНДА</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CREATE-EMAIL</td>
+                                <td>СОЗДАНИЕ НОВОГО ВРЕМЕННОГО EMAIL-АДРЕСА</td>
+                                <td>/new</td>
+                            </tr>
+                            <tr>
+                                <td>CHECK-INBOX</td>
+                                <td>ПРОВЕРКА ВХОДЯЩИХ ПИСЕМ</td>
+                                <td>/check</td>
+                            </tr>
+                            <tr>
+                                <td>EMAIL-LIST</td>
+                                <td>СПИСОК АКТИВНЫХ EMAIL-АДРЕСОВ</td>
+                                <td>/list</td>
+                            </tr>
+                            <tr>
+                                <td>DELETE-EMAIL</td>
+                                <td>УДАЛЕНИЕ ВРЕМЕННОГО АДРЕСА</td>
+                                <td>/delete</td>
+                            </tr>
+                            <tr>
+                                <td>AUTO-NOTIFY</td>
+                                <td>АВТОМАТИЧЕСКИЕ УВЕДОМЛЕНИЯ О НОВЫХ ПИСЬМАХ</td>
+                                <td>АВТОМАТИЧЕСКИ</td>
+                            </tr>                            <tr>
+                                <td>EMAIL-CONTENT</td>
+                                <td>ПРОСМОТР СОДЕРЖИМОГО ПИСЕМ</td>
+                                <td>INLINE КНОПКИ</td>
+                            </tr>
+                            <tr>
+                                <td>ADMIN-PANEL</td>
+                                <td>ПАНЕЛЬ АДМИНИСТРАТОРА ДЛЯ УПРАВЛЕНИЯ БОТОМ</td>
+                                <td>/admin</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 class="case-section-title">Архитектура решения</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>СЛОЙ</th>
+                                <th>ОТВЕТСТВЕННОСТЬ</th>
+                                <th>РЕАЛИЗАЦИЯ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>INTERFACE</td>
+                                <td>ОБРАБОТКА КОМАНД И СООБЩЕНИЙ ПОЛЬЗОВАТЕЛЕЙ</td>
+                                <td>AIOGRAM HANDLERS</td>
+                            </tr>
+                            <tr>
+                                <td>BUSINESS</td>
+                                <td>ЛОГИКА РАБОТЫ С ВРЕМЕННОЙ ПОЧТОЙ</td>
+                                <td>SERVICE CLASSES</td>
+                            </tr>
+                            <tr>
+                                <td>API</td>
+                                <td>ИНТЕГРАЦИЯ С ВНЕШНИМИ СЕРВИСАМИ</td>
+                                <td>HTTP CLIENT WRAPPER</td>
+                            </tr>
+                            <tr>
+                                <td>STORAGE</td>
+                                <td>ХРАНЕНИЕ СЕССИЙ И ВРЕМЕННЫХ ДАННЫХ</td>
+                                <td>IN-MEMORY CACHE</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 class="case-section-title">Этапы разработки</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ЭТАП</th>
+                                <th>ЗАДАЧА</th>
+                                <th>РЕЗУЛЬТАТ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>RESEARCH</td>
+                                <td>ИССЛЕДОВАНИЕ API ВРЕМЕННОЙ ПОЧТЫ И TELEGRAM BOT API</td>
+                                <td>ВЫБРАНА АРХИТЕКТУРА И ТЕХНОЛОГИИ</td>
+                            </tr>
+                            <tr>
+                                <td>MVP</td>
+                                <td>БАЗОВЫЙ ФУНКЦИОНАЛ: СОЗДАНИЕ EMAIL И ПРОВЕРКА ПИСЕМ</td>
+                                <td>РАБОЧИЙ ПРОТОТИП БОТА</td>
+                            </tr>
+                            <tr>
+                                <td>UX</td>
+                                <td>РАЗРАБОТКА УДОБНОГО ИНТЕРФЕЙСА С INLINE КНОПКАМИ</td>
+                                <td>ИНТУИТИВНАЯ НАВИГАЦИЯ ПО БОТУ</td>
+                            </tr>
+                            <tr>
+                                <td>AUTOMATION</td>
+                                <td>АВТОМАТИЧЕСКИЕ УВЕДОМЛЕНИЯ О НОВЫХ ПИСЬМАХ</td>
+                                <td>PUSH-УВЕДОМЛЕНИЯ В РЕАЛЬНОМ ВРЕМЕНИ</td>
+                            </tr>
+                            <tr>
+                                <td>TESTING</td>
+                                <td>ТЕСТИРОВАНИЕ С РАЗЛИЧНЫМИ EMAIL-СЕРВИСАМИ</td>
+                                <td>СТАБИЛЬНАЯ РАБОТА СО ВСЕМИ ТИПАМИ ПИСЕМ</td>
+                            </tr>
+                        </tbody>
+                    </table>                    <h2 class="case-section-title">Пользовательские сценарии</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>СЦЕНАРИЙ</th>
+                                <th>ШАГИ</th>
+                                <th>РЕЗУЛЬТАТ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>QUICK-REG</td>
+                                <td>/start → /new → КОПИРОВАНИЕ EMAIL → РЕГИСТРАЦИЯ → /check</td>
+                                <td>БЫСТРАЯ РЕГИСТРАЦИЯ БЕЗ ЛИЧНОЙ ПОЧТЫ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="case-text">
+                        Важно отметить, что ботом можно пользоваться полностью через reply клавиатуры, что обеспечивает максимальное удобство использования без необходимости запоминать команды.
+                    </p>
+
+                    <h2 class="case-section-title">Результаты проекта</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ДОСТИЖЕНИЕ</th>
+                                <th>ОПИСАНИЕ</th>
+                                <th>МЕТРИКА</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>FUNCTIONALITY</td>
+                                <td>ПОЛНОФУНКЦИОНАЛЬНЫЙ БОТ С ВСЕМИ ПЛАНИРУЕМЫМИ ВОЗМОЖНОСТЯМИ</td>
+                                <td>100% ГОТОВНОСТИ</td>
+                            </tr>
+                            <tr>
+                                <td>API-MASTERY</td>
+                                <td>ОСВОЕНИЕ РАБОТЫ С TELEGRAM BOT API И ВНЕШНИМИ СЕРВИСАМИ</td>
+                                <td>НОВЫЕ НАВЫКИ</td>
+                            </tr>
+                            <tr>
+                                <td>ASYNC-CODE</td>
+                                <td>ПРАКТИКА АСИНХРОННОГО ПРОГРАММИРОВАНИЯ НА PYTHON</td>
+                                <td>УЛУЧШЕННАЯ ПРОИЗВОДИТЕЛЬНОСТЬ</td>
+                            </tr>
+                            <tr>
+                                <td>UX-DESIGN</td>
+                                <td>СОЗДАНИЕ УДОБНОГО ИНТЕРФЕЙСА ДЛЯ TELEGRAM-БОТА</td>
+                                <td>ИНТУИТИВНАЯ НАВИГАЦИЯ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h2 class="case-section-title">Срок разработки</h2>
+                    <p class="case-text">
+                        2 недели
+                    </p>
+
+                    <h2 class="case-section-title">Команда проекта</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ФИО</th>
+                                <th>РОЛЬ</th>
+                                <th>ОТВЕТСТВЕННОСТЬ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>КОВТУН КИРИЛЛ ЕВГЕНЬЕВИЧ</td>
+                                <td>PYTHON DEVELOPER</td>
+                                <td>АРХИТЕКТУРА, РАЗРАБОТКА, ТЕСТИРОВАНИЕ</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p class="case-text">
+                        Проект демонстрирует навыки интеграции с внешними API, создания удобных пользовательских интерфейсов в Telegram и асинхронного программирования. Бот может быть развернут как самостоятельный сервис или интегрирован в более крупные проекты.
+                    </p>
+
+                    <!-- CTA -->
+                    <div class="case-cta text-center">
+                        <h3 class="cta-title">НУЖЕН TELEGRAM-БОТ ДЛЯ ВАШЕГО БИЗНЕСА?</h3>
+                        <p class="cta-description">
+                            Создам функциональные боты для автоматизации бизнес-процессов, интеграции с внешними сервисами и взаимодействия с клиентами
+                        </p>
+                        <a href="../index.html#contact" class="btn btn-accent-orange btn-lg">
+                            ОБСУДИТЬ ПРОЕКТ
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="../script.js"></script>
+</body>
+</html>
