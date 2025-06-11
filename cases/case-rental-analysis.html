@@ -133,27 +133,82 @@
                         <li>Найти закономерности, влияющие на цену: от метро до типа отделки.</li>
                         <li>Выявить аномальные и переоценённые объекты.</li>
                         <li>Реализовать удобный дашборд, с которым может работать неаналитик.</li>
-                    </ul>
-
-                    <h2 class="case-section-title">Особенности реализации</h2>
+                    </ul>                    <h2 class="case-section-title">Особенности реализации</h2>
                     <p class="case-text">
                         Проект потребовал комплексного подхода к работе с данными — от автоматизированного сбора до глубокого анализа:
                     </p>
-                    <ul class="case-list">
-                        <li><strong>Сбор данных</strong>: использован selenium для парсинга <a href="https://realty.yandex.ru/moskva/snyat/kvartira/posutochno/" target="_blank">realty.yandex.ru</a> с имитацией действий пользователя. В каждом объявлении собирались как видимые данные, так и те, что раскрываются по кнопке.</li>
-                        <li><strong>Неструктурированные блоки</strong>: признаки извлекались из полутекстовых описаний (например, "Потолки — 3,2 м", "Дом 1987 года"). Применялись регулярные выражения и шаблонное сопоставление.</li>
-                        <li><strong>Расчёт новых признаков</strong>: вычислены параметры, которых не было в исходных данных — цена за м², плотность квартир, отношение жилой площади к общей и др.</li>
-                        <li><strong>Воспроизводимость</strong>: вся логика анализа реализована в report.ipynb, а дашборд построен на Streamlit. Клиент сможет самостоятельно обновлять данные и проводить анализ актуальной информации всего за несколько кликов мышкой благодаря удобной навигации и автоматизации процессов.</li>
-                    </ul>
-
-                    <h2 class="case-section-title">Структура проекта</h2>
-                    <ul class="case-list">
-                        <li><strong>parser.py</strong> — автоматический сбор объявлений.</li>
-                        <li><strong>clean_data.py</strong> — очистка, нормализация, извлечение признаков.</li>
-                        <li><strong>eda.py, analyze_distributions.py, analyze_price_factors.py, analyze_special_cases.py</strong> — логика анализа и визуализации.</li>
-                        <li><strong>report.ipynb</strong> — воспроизводимый анализ с графиками и таблицами.</li>
-                        <li><strong>dashboard.py</strong> — визуальный дашборд (Streamlit).</li>
-                    </ul>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>КОМПОНЕНТ</th>
+                                <th>ОПИСАНИЕ</th>
+                                <th>ТЕХНОЛОГИЯ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>DATA-COLLECT</td>
+                                <td>ИСПОЛЬЗОВАН SELENIUM ДЛЯ ПАРСИНГА REALTY.YANDEX.RU С ИМИТАЦИЕЙ ДЕЙСТВИЙ ПОЛЬЗОВАТЕЛЯ</td>
+                                <td>SELENIUM WEBDRIVER</td>
+                            </tr>
+                            <tr>
+                                <td>TEXT-MINING</td>
+                                <td>ИЗВЛЕЧЕНИЕ ПРИЗНАКОВ ИЗ ПОЛУТЕКСТОВЫХ ОПИСАНИЙ ("ПОТОЛКИ — 3,2 М", "ДОМ 1987 ГОДА")</td>
+                                <td>REGEX + PATTERN MATCHING</td>
+                            </tr>
+                            <tr>
+                                <td>FEATURE-ENG</td>
+                                <td>ВЫЧИСЛЕНИЕ ПРОИЗВОДНЫХ ПАРАМЕТРОВ: ЦЕНА ЗА М², ПЛОТНОСТЬ КВАРТИР, ОТНОШЕНИЯ ПЛОЩАДЕЙ</td>
+                                <td>PANDAS + NUMPY</td>
+                            </tr>
+                            <tr>
+                                <td>REPRODUCE</td>
+                                <td>ВОСПРОИЗВОДИМЫЙ АНАЛИЗ В JUPYTER + ИНТЕРАКТИВНЫЙ ДАШБОРД ДЛЯ КЛИЕНТА</td>
+                                <td>JUPYTER + STREAMLIT</td>
+                            </tr>
+                        </tbody>
+                    </table>                    <h2 class="case-section-title">Структура проекта</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ФАЙЛ</th>
+                                <th>НАЗНАЧЕНИЕ</th>
+                                <th>ОПИСАНИЕ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>PARSER.PY</td>
+                                <td>СБОР ДАННЫХ</td>
+                                <td>АВТОМАТИЧЕСКИЙ ПАРСИНГ ОБЪЯВЛЕНИЙ С REALTY.YANDEX.RU</td>
+                            </tr>
+                            <tr>
+                                <td>CLEAN_DATA.PY</td>
+                                <td>ОБРАБОТКА</td>
+                                <td>ОЧИСТКА, НОРМАЛИЗАЦИЯ, ИЗВЛЕЧЕНИЕ ПРИЗНАКОВ</td>
+                            </tr>
+                            <tr>
+                                <td>EDA.PY</td>
+                                <td>АНАЛИЗ</td>
+                                <td>РАЗВЕДОЧНЫЙ АНАЛИЗ ДАННЫХ И ВИЗУАЛИЗАЦИЯ</td>
+                            </tr>
+                            <tr>
+                                <td>ANALYZE_*.PY</td>
+                                <td>МОДУЛИ АНАЛИЗА</td>
+                                <td>ЛОГИКА АНАЛИЗА РАСПРЕДЕЛЕНИЙ, ФАКТОРОВ ЦЕНЫ, ОСОБЫХ СЛУЧАЕВ</td>
+                            </tr>
+                            <tr>
+                                <td>REPORT.IPYNB</td>
+                                <td>ОТЧЕТ</td>
+                                <td>ВОСПРОИЗВОДИМЫЙ АНАЛИЗ С ГРАФИКАМИ И ТАБЛИЦАМИ</td>
+                            </tr>
+                            <tr>
+                                <td>DASHBOARD.PY</td>
+                                <td>ИНТЕРФЕЙС</td>
+                                <td>ВИЗУАЛЬНЫЙ ДАШБОРД НА STREAMLIT ДЛЯ КЛИЕНТА</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                     <h2 class="case-section-title">Результаты</h2>
                     <p class="case-text">
@@ -198,15 +253,48 @@
                     <h3 class="case-subsection-title">5. Малозначимые признаки</h3>
                     <p class="case-text">
                         Корреляционный анализ показал, что такие признаки как этаж, количество подъездов или даже тип дома оказывают минимальное влияние. Это позволило клиенту сократить перечень фичей, которые он учитывал при экспертной оценке.
-                    </p>
-
-                    <h2 class="case-section-title">Используемые технологии</h2>
-                    <ul class="case-list">
-                        <li><strong>Python</strong>: pandas, matplotlib, seaborn, selenium, ast, regex</li>
-                        <li><strong>Jupyter Notebook</strong>: воспроизводимый анализ</li>
-                        <li><strong>Streamlit</strong>: дашборд с навигацией и графиками</li>
-                        <li><strong>Feature Engineering</strong>: ручное извлечение и создание производных признаков</li>
-                    </ul>
+                    </p>                    <h2 class="case-section-title">Используемые технологии</h2>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>КАТЕГОРИЯ</th>
+                                <th>ТЕХНОЛОГИИ</th>
+                                <th>ПРИМЕНЕНИЕ</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>CORE</td>
+                                <td>PYTHON 3.9+</td>
+                                <td>ОСНОВНОЙ ЯЗЫК ПРОГРАММИРОВАНИЯ</td>
+                            </tr>
+                            <tr>
+                                <td>DATA-PROC</td>
+                                <td>PANDAS, NUMPY</td>
+                                <td>ОБРАБОТКА И АНАЛИЗ ДАННЫХ</td>
+                            </tr>
+                            <tr>
+                                <td>VISUAL</td>
+                                <td>MATPLOTLIB, SEABORN</td>
+                                <td>СОЗДАНИЕ ГРАФИКОВ И ВИЗУАЛИЗАЦИЙ</td>
+                            </tr>
+                            <tr>
+                                <td>PARSING</td>
+                                <td>SELENIUM WEBDRIVER</td>
+                                <td>АВТОМАТИЗИРОВАННЫЙ СБОР ДАННЫХ</td>
+                            </tr>
+                            <tr>
+                                <td>TEXT</td>
+                                <td>REGEX, AST</td>
+                                <td>ИЗВЛЕЧЕНИЕ ПРИЗНАКОВ ИЗ ТЕКСТА</td>
+                            </tr>
+                            <tr>
+                                <td>INTERFACE</td>
+                                <td>JUPYTER NOTEBOOK, STREAMLIT</td>
+                                <td>ВОСПРОИЗВОДИМЫЙ АНАЛИЗ И ДАШБОРД</td>
+                            </tr>
+                        </tbody>
+                    </table>
 
                     <h2 class="case-section-title">Срок разработки</h2>
                     <p class="case-text">
